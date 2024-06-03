@@ -1,0 +1,48 @@
+/* 
+ * Leaflet ControlIconEx v0.1 - 2024-06-02
+ * 
+ * Copyright 2024 mfhsieh
+ * mfhsieh@gmail.com 
+ * 
+ * Licensed under the MIT license. 
+ * 
+ * Demos: 
+ * https://mfhsieh.github.io/leaflet-iconex/
+ * 
+ * Source: 
+ * git@github.com:mfhsieh/leaflet-iconex.git 
+ * 
+ */
+@-moz-document url-prefix() {
+
+    .fa,
+    .fas {
+        margin-top: .05rem;
+        margin-bottom: -.05rem;
+    }
+}
+
+.leaflet-div-icon {
+    background: transparent;
+    border: none;
+}
+
+.leaflet-iconex-icon1_1 {
+    font-size: 18px;
+    color: rgba(var(--primary-rgb), 1);
+}
+
+.leaflet-iconex-icon1_2 {
+    font-size: 18px;
+    color: white;
+}
+
+.leaflet-iconex-icon2_1 {
+    font-size: 22px;
+    color: rgba(var(--primary-rgb), 1);
+}
+
+.leaflet-iconex-icon2_2 {
+    font-size: 22px;
+    color: white;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Leaflet.Control.MarkerEx - Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script src="https://kit.fontawesome.com/8132850410.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="examples/demo.css" />
+    <script src="src/leaflet-iconex.js"></script>
+
+    <style>
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            --primary-rgb: 25, 135, 84;
+        }
+
+        #map {
+            height: calc(var(--vh, 1vh) * 100);
+            width: 100vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <script>
+        "use strict";
+
+        function set_viewport() {
+            document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+        }
+
+        set_viewport();
+        window.addEventListener("resize", set_viewport);
+
+        let map = new L.Map("map", {
+            center: [25.048003, 121.517062],
+            zoom: 13,
+            zoomControl: false,
+        });
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            minZoom: 7,
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
+        }).addTo(map);
+
+        const icon1_1 = new L.Control.IconEx({
+            className: "leaflet-iconex-icon1_1",
+            htmlContent: '<i class="fas fa-h-square"></i>',
+            iconFill: "rgba(var(--primary-rgb), 1)",
+            shadowUrl: "images/shadow.png",
+        });
+        const marker1_1 = L.marker([25.048003, 121.517062], { icon: icon1_1 }).addTo(map);
+
+        const icon1_2 = new L.Control.IconEx({
+            className: "leaflet-iconex-icon1_2",
+            htmlContent: '<i class="fas fa-h-square"></i>',
+            iconFill: "rgba(var(--primary-rgb), 1)",
+            backFill: "rgba(var(--primary-rgb), 1)",
+        });
+        const marker1_2 = L.marker([25.038003, 121.517062], { icon: icon1_2 }).addTo(map);
+
+        const options = {
+            htmlIcon: `
+<svg width="32" height="40" viewBox="0 0 32 40" xmlns="http://www.w3.org/2000/svg">
+	<path stroke-width="1" d="m 2.5,0.5 c -1.107998,0 -2,0.892002 -2,2 v 27 c 0,1.107998 0.892002,2 2,2 h 4.7044922 a 4.1676656,4.1676656 24.095192 0 1 3.1064288,1.38926 L 16,39.25 21.68908,32.88926 A 4.1676657,4.1676657 155.90481 0 1 24.795508,31.5 H 29.5 c 1.107998,0 2,-0.892002 2,-2 v -27 c 0,-1.107998 -0.892002,-2 -2,-2 z" />
+</svg>`,
+            htmlBack: `
+<svg width="32" height="40" viewBox="0 0 32 40" xmlns="http://www.w3.org/2000/svg">
+	<path stroke-width="0" d="M 5,3 C 3.892001,3 3,3.892001 3,5 v 20.028625 c 0,1.08876 0.022359,3.061889 0.8932964,3.63942 C 4.4251287,29.020704 5.8826147,29 6.9713752,29 h 1.2427966 a 4.4084708,4.4084708 24.093187 0 1 3.2857102,1.4693 l 2.661918,2.975769 a 2.4663321,2.4663321 0 0 0 3.6764,0 L 20.500118,30.4693 A 4.4084708,4.4084708 155.90681 0 1 23.785828,29 H 27 c 1.107999,0 2,-0.892001 2,-2 V 5 C 29,3.892001 28.107999,3 27,3 Z" />
+</svg>`,
+        }
+
+        const icon2_1 = new L.Control.IconEx({
+            ...options, ...{
+                className: "leaflet-iconex-icon2_1",
+                htmlContent: '<i class="fas fa-h-square"></i>',
+                iconFill: "rgba(var(--primary-rgb), 1)",
+            }
+        });
+        const marker2_1 = L.marker([25.048003, 121.527062], { icon: icon2_1 }).addTo(map);
+
+        const icon2_2 = new L.Control.IconEx({
+            ...options, ...{
+                className: "leaflet-iconex-icon2_2",
+                htmlContent: '<i class="fas fa-h-square"></i>',
+                iconFill: "rgba(var(--primary-rgb), 1)",
+                backFill: "rgba(var(--primary-rgb), 1)",
+            }
+        });
+        const marker2_2 = L.marker([25.038003, 121.527062], { icon: icon2_2 }).addTo(map);
+
+    </script>
+</body>
+
+</html>
