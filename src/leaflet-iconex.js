@@ -87,7 +87,7 @@
             divs.push(`<div style="${backStyles.join("; ")};">${this.options.htmlBack}</div>`);
             divs.push(`<div style="${contentStyles.join("; ")};">${this.options.htmlContent}</div>`);
 
-            this.options.html = `<div class="position-relative">${divs.join("")}</div>`;
+            this.options.html = `<div class="leaflet-iconex position-relative">${divs.join("")}</div>`;
         },
     });
 
