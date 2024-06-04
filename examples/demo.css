@@ -13,14 +13,14 @@
  * git@github.com:mfhsieh/leaflet-iconex.git 
  * 
  */
-/* @-moz-document url-prefix() {
+@-moz-document url-prefix() {
 
     .leaflet-iconex .fa,
     .leaflet-iconex .fas {
         margin-top: .05rem;
         margin-bottom: -.05rem;
     }
-} */
+}
 
 .leaflet-div-icon {
     background: transparent;
