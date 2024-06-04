@@ -54,6 +54,7 @@
             backFill: "#ffffff",
             backOpacity: 1,
 
+            contentSize: null,
             contentAnchor: [16, 16],
         },
 
@@ -78,14 +79,18 @@
             const contentStyles = [];
             contentStyles.push(`position: absolute`);
             if (this.options.contentAnchor) contentStyles.push(`left: ${this.options.contentAnchor[0]}px; top: ${this.options.contentAnchor[1]}px`);
-            contentStyles.push(`display: flex`);
-            contentStyles.push(`align-items: center`);
             contentStyles.push(`transform: translate(-50%, -50%)`);
+
+            const spanStyles = [];
+            spanStyles.push("display: flex");
+            spanStyles.push("align-items: center");
+            spanStyles.push("justify-content: center");
+            if (this.options.contentSize) spanStyles.push(`width: ${this.options.contentSize[0]}px; height: ${this.options.contentSize[1]}px`);
 
             const divs = [];
             divs.push(`<div style="${iconStyles.join("; ")};">${this.options.htmlIcon}</div>`);
             divs.push(`<div style="${backStyles.join("; ")};">${this.options.htmlBack}</div>`);
-            divs.push(`<div style="${contentStyles.join("; ")};">${this.options.htmlContent}</div>`);
+            divs.push(`<div style="${contentStyles.join("; ")};"><span style="${spanStyles.join("; ")}">${this.options.htmlContent}</span></div>`);
 
             this.options.html = `<div class="leaflet-iconex position-relative">${divs.join("")}</div>`;
         },

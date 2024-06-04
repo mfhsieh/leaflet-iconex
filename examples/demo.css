@@ -27,13 +27,9 @@
 .leaflet-div-icon {
     background: transparent;
     border: none;
-    line-height: 0;
-    text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    -moz-text-size-adjust: none;
-    -ms-text-size-adjust: none;
 }
 
+.leaflet-div-icon,
 .leaflet-iconex {
     line-height: 0;
     text-size-adjust: none;
@@ -42,50 +38,32 @@
     -ms-text-size-adjust: none;
 }
 
-.leaflet-iconex-icon1_1 {
-    font-size: 18px;
-    color: rgba(var(--primary-rgb), 1);
-}
-
-.leaflet-iconex-icon1_2 {
-    font-size: 18px;
-    color: white;
-}
-
-.leaflet-iconex-icon1_3 {
+.leaflet-iconex-fontsize-16 {
     font-size: 16px;
-    color: white;
 }
 
-.leaflet-iconex-icon1_3 span {
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    text-align: center;
-    background-color: rgba(var(--primary-rgb), 1);
-    border-radius: 10px;
+.leaflet-iconex-fontsize-18 {
+    font-size: 18px;
 }
 
-.leaflet-iconex-icon2_1 {
-    font-size: 22px;
+.leaflet-iconex-fontsize-20 {
+    font-size: 20px;
+}
+
+.leaflet-iconex-fontsize-22 {
+    font-size: 20px;
+}
+
+.leaflet-iconex-color-primary {
     color: rgba(var(--primary-rgb), 1);
 }
 
-.leaflet-iconex-icon2_2 {
-    font-size: 22px;
+.leaflet-iconex-color-white {
     color: white;
 }
 
-.leaflet-iconex-icon2_3 {
-    font-size: 20px;
-    color: white;
-}
-
-.leaflet-iconex-icon2_3 span {
-    width: 24px;
-    height: 24px;
-    line-height: 24px;
-    text-align: center;
+.leaflet-iconex-reverse1 span,
+.leaflet-iconex-reverse2 span {
+    border-radius: 50%;
     background-color: rgba(var(--primary-rgb), 1);
-    border-radius: 12px;
 }
