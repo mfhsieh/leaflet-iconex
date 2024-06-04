@@ -15,6 +15,8 @@
  */
 @-moz-document url-prefix() {
 
+    .leaflet-div-icon .fa,
+    .leaflet-div-icon .fas,
     .leaflet-iconex .fa,
     .leaflet-iconex .fas {
         margin-top: .05rem;
@@ -25,6 +27,19 @@
 .leaflet-div-icon {
     background: transparent;
     border: none;
+    line-height: 0;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+}
+
+.leaflet-iconex {
+    line-height: 0;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
 }
 
 .leaflet-iconex-icon1_1 {
@@ -49,10 +64,6 @@
     text-align: center;
     background-color: rgba(var(--primary-rgb), 1);
     border-radius: 10px;
-    text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    -moz-text-size-adjust: none;
-    -ms-text-size-adjust: none;
 }
 
 .leaflet-iconex-icon2_1 {
@@ -77,8 +88,4 @@
     text-align: center;
     background-color: rgba(var(--primary-rgb), 1);
     border-radius: 12px;
-    text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    -moz-text-size-adjust: none;
-    -ms-text-size-adjust: none;
 }
