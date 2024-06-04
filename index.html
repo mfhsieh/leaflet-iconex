@@ -63,7 +63,6 @@
             className: "leaflet-iconex-icon1_1",
             htmlContent: '<i class="fas fa-h-square"></i>',
             iconFill: "rgba(var(--primary-rgb), 1)",
-            shadowUrl: "images/shadow.png",
         });
         const marker1_1 = L.marker([25.048003, 121.517062], { icon: icon1_1 }).addTo(map);
 
@@ -74,6 +73,13 @@
             backFill: "rgba(var(--primary-rgb), 1)",
         });
         const marker1_2 = L.marker([25.038003, 121.517062], { icon: icon1_2 }).addTo(map);
+
+        const icon1_3 = new L.Control.IconEx({
+            className: "leaflet-iconex-icon1_3",
+            htmlContent: '<span>8</span>',
+            iconFill: "rgba(var(--primary-rgb), 1)",
+        });
+        const marker1_3 = L.marker([25.028003, 121.517062], { icon: icon1_3 }).addTo(map);
 
         const options = {
             htmlIcon: `
@@ -105,6 +111,14 @@
         });
         const marker2_2 = L.marker([25.038003, 121.527062], { icon: icon2_2 }).addTo(map);
 
+        const icon2_3 = new L.Control.IconEx({
+            ...options, ...{
+                className: "leaflet-iconex-icon2_3",
+                htmlContent: '<span>8</span>',
+                iconFill: "rgba(var(--primary-rgb), 1)",
+            }
+        });
+        const marker2_3 = L.marker([25.028003, 121.527062], { icon: icon2_3 }).addTo(map);
     </script>
 </body>
 

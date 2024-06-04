@@ -25,6 +25,10 @@
 .leaflet-div-icon {
     background: transparent;
     border: none;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
 }
 
 .leaflet-iconex-icon1_1 {
@@ -37,6 +41,20 @@
     color: white;
 }
 
+.leaflet-iconex-icon1_3 {
+    font-size: 16px;
+    color: white;
+}
+
+.leaflet-iconex-icon1_3 span {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background-color: rgba(var(--primary-rgb), 1);
+    border-radius: 10px;
+}
+
 .leaflet-iconex-icon2_1 {
     font-size: 22px;
     color: rgba(var(--primary-rgb), 1);
@@ -45,4 +63,18 @@
 .leaflet-iconex-icon2_2 {
     font-size: 22px;
     color: white;
+}
+
+.leaflet-iconex-icon2_3 {
+    font-size: 20px;
+    color: white;
+}
+
+.leaflet-iconex-icon2_3 span {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    background-color: rgba(var(--primary-rgb), 1);
+    border-radius: 12px;
 }
