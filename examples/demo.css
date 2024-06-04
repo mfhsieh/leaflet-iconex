@@ -62,8 +62,7 @@
     color: white;
 }
 
-.leaflet-iconex-reverse1 span,
-.leaflet-iconex-reverse2 span {
+.leaflet-iconex-reverse1 span {
     border-radius: 50%;
     background-color: rgba(var(--primary-rgb), 1);
 }

@@ -114,10 +114,10 @@
 
         const icon2_3 = new L.Control.IconEx({
             ...options, ...{
-                className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-white leaflet-iconex-reverse2",
-                htmlContent: '8',
+                className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-primary leaflet-iconex-reverse2",
+                htmlContent: '<span style="font-weight: bold; background-color: black">8</span>',
                 iconFill: "rgba(var(--primary-rgb), 1)",
-                contentSize: [24, 24],
+                // contentSize: [24, 24],
             }
         });
         const marker2_3 = L.marker([25.028003, 121.527062], { icon: icon2_3 }).addTo(map);
