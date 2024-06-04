@@ -75,12 +75,18 @@
         const marker1_2 = L.marker([25.038003, 121.517062], { icon: icon1_2 }).addTo(map);
 
         const icon1_3 = new L.Control.IconEx({
-            className: "leaflet-iconex-fontsize-16 leaflet-iconex-color-white leaflet-iconex-reverse1",
-            htmlContent: '8',
+            className: "leaflet-iconex-fontsize-18 leaflet-iconex-color-primary",
+            htmlContent: '88',
             iconFill: "rgba(var(--primary-rgb), 1)",
-            contentSize: [20, 20],
         });
         const marker1_3 = L.marker([25.028003, 121.517062], { icon: icon1_3 }).addTo(map);
+
+        const icon1_4 = new L.Control.IconEx({
+            className: "leaflet-iconex-fontsize-16 leaflet-iconex-color-white leaflet-iconex-reverse1",
+            htmlContent: '88',
+            iconFill: "rgba(var(--primary-rgb), 1)",
+        });
+        const marker1_4 = L.marker([25.018003, 121.517062], { icon: icon1_4 }).addTo(map);
 
         const options = {
             htmlIcon: `
@@ -91,6 +97,8 @@
 <svg width="32" height="40" viewBox="0 0 32 40" xmlns="http://www.w3.org/2000/svg">
 	<path stroke-width="0" d="M 5,3 C 3.892001,3 3,3.892001 3,5 v 20.028625 c 0,1.08876 0.022359,3.061889 0.8932964,3.63942 C 4.4251287,29.020704 5.8826147,29 6.9713752,29 h 1.2427966 a 4.4084708,4.4084708 24.093187 0 1 3.2857102,1.4693 l 2.661918,2.975769 a 2.4663321,2.4663321 0 0 0 3.6764,0 L 20.500118,30.4693 A 4.4084708,4.4084708 155.90681 0 1 23.785828,29 H 27 c 1.107999,0 2,-0.892001 2,-2 V 5 C 29,3.892001 28.107999,3 27,3 Z" />
 </svg>`,
+            backSize: [32, 40],
+            backAnchor: [16, 20],
         }
 
         const icon2_1 = new L.Control.IconEx({
@@ -114,13 +122,22 @@
 
         const icon2_3 = new L.Control.IconEx({
             ...options, ...{
-                className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-primary leaflet-iconex-reverse2",
-                htmlContent: '<span style="font-weight: bold; background-color: black">8</span>',
+                className: "leaflet-iconex-fontsize-22 leaflet-iconex-color-primary",
+                htmlContent: '88',
                 iconFill: "rgba(var(--primary-rgb), 1)",
-                // contentSize: [24, 24],
             }
         });
         const marker2_3 = L.marker([25.028003, 121.527062], { icon: icon2_3 }).addTo(map);
+
+        const icon2_4 = new L.Control.IconEx({
+            ...options, ...{
+                className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-white leaflet-iconex-reverse2",
+                htmlContent: '88',
+                iconFill: "rgba(var(--primary-rgb), 1)",
+            }
+        });
+        const marker2_4 = L.marker([25.018003, 121.527062], { icon: icon2_4 }).addTo(map);
+
     </script>
 </body>
 

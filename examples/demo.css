@@ -38,6 +38,7 @@
     -ms-text-size-adjust: none;
 }
 
+
 .leaflet-iconex-fontsize-16 {
     font-size: 16px;
 }
@@ -62,7 +63,20 @@
     color: white;
 }
 
-.leaflet-iconex-reverse1 span {
+.leaflet-iconex-reverse1 span,
+.leaflet-iconex-reverse2 span {
     border-radius: 50%;
     background-color: rgba(var(--primary-rgb), 1);
+}
+
+.leaflet-iconex-reverse1 span {
+    width: 20px;
+    height: 20px;
+    line-height: 20px !important;
+}
+
+.leaflet-iconex-reverse2 span {
+    width: 24px;
+    height: 24px;
+    line-height: 24px !important;
 }
