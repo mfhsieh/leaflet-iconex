@@ -15,15 +15,15 @@
  */
 @-moz-document url-prefix() {
 
-    /* .leaflet-div-icon div:last-child span,
-    .leaflet-iconex div:last-child span,  */
-    /* .leaflet-div-icon .fa,
-    .leaflet-div-icon .fas,
-    .leaflet-iconex .fa,
-    .leaflet-iconex .fas {
+    /* .leaflet-div-icon div:last-child,
+    .leaflet-iconex div:last-child, */
+    .leaflet-div-icon div:last-child .fa,
+    .leaflet-div-icon div:last-child .fas,
+    .leaflet-iconex div:last-child .fa,
+    .leaflet-iconex div:last-child .fas {
         margin-top: .05rem;
         margin-bottom: -.05rem;
-    } */
+    }
 }
 
 .leaflet-div-icon {
@@ -81,8 +81,8 @@
     color: white;
 }
 
-.leaflet-iconex-reverse1 span,
-.leaflet-iconex-reverse2 span {
+.leaflet-iconex-reverse1 div:last-child,
+.leaflet-iconex-reverse2 div:last-child {
     border-radius: 50%;
     background-color: rgba(var(--primary-rgb), 1);
 }

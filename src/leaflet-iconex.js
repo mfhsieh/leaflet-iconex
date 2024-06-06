@@ -99,17 +99,18 @@
             if (this.options.contentHtml) {
                 const contentStyles = [];
                 contentStyles.push(`position: absolute`);
+                if (this.options.contentHtmlSize) contentStyles.push(`width: ${this.options.contentHtmlSize[0]}px; height: ${this.options.contentHtmlSize[1]}px`);
                 if (this.options.contentHtmlAnchor) contentStyles.push(`left: ${this.options.contentHtmlAnchor[0] * iconScale}px; top: ${this.options.contentHtmlAnchor[1] * iconScale}px`);
                 contentStyles.push(`transform: translate(-50%, -50%) scale(${iconScale})`);
+                contentStyles.push("display: flex");
+                contentStyles.push("align-items: center");
+                contentStyles.push("justify-content: center");
+                contentStyles.push("text-align: center");
 
                 const spanStyles = [];
-                spanStyles.push("text-align: center");
-                if (this.options.contentHtmlSize) spanStyles.push(`width: ${this.options.contentHtmlSize[0]}px; height: ${this.options.contentHtmlSize[1]}px`);
-                spanStyles.push("display: flex");
-                spanStyles.push("align-items: center");
-                spanStyles.push("justify-content: center");
 
-                divs.push(`<div style="${contentStyles.join("; ")};"><span style="${spanStyles.join("; ")}">${this.options.contentHtml}</span></div>`);
+                // divs.push(`<div style="${contentStyles.join("; ")};"><span style="${spanStyles.join("; ")}">${this.options.contentHtml}</span></div>`);
+                divs.push(`<div style="${contentStyles.join("; ")};">${this.options.contentHtml}</div>`);
             }
 
             const divsStyles = [];
