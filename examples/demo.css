@@ -17,13 +17,13 @@
 
     /* .leaflet-div-icon div:last-child span,
     .leaflet-iconex div:last-child span,  */
-    .leaflet-div-icon .fa,
+    /* .leaflet-div-icon .fa,
     .leaflet-div-icon .fas,
     .leaflet-iconex .fa,
     .leaflet-iconex .fas {
         margin-top: .05rem;
         margin-bottom: -.05rem;
-    }
+    } */
 }
 
 .leaflet-div-icon {
@@ -87,6 +87,7 @@
     background-color: rgba(var(--primary-rgb), 1);
 }
 
+/* 
 .leaflet-iconex-reverse1 span {
     width: 20px;
     height: 20px;
@@ -95,4 +96,4 @@
 .leaflet-iconex-reverse2 span {
     width: 24px;
     height: 24px;
-}
+} */

@@ -56,7 +56,7 @@
             backgroundOpacity: 1,
 
             contentHtml: "",
-            contentHtmlSize: [18, 18],
+            contentHtmlSize: null,
             contentHtmlAnchor: [16, 16],  // the center point of the content layer, relative to the upper left point of the icon
         },
 
@@ -100,14 +100,14 @@
                 const contentStyles = [];
                 contentStyles.push(`position: absolute`);
                 if (this.options.contentHtmlAnchor) contentStyles.push(`left: ${this.options.contentHtmlAnchor[0] * iconScale}px; top: ${this.options.contentHtmlAnchor[1] * iconScale}px`);
-                contentStyles.push("display: flex");
-                contentStyles.push("align-items: center");
                 contentStyles.push(`transform: translate(-50%, -50%) scale(${iconScale})`);
 
                 const spanStyles = [];
                 spanStyles.push("text-align: center");
-                if (this.options.contentHtmlSize) spanStyles.push(`line-height: ${this.options.contentHtmlSize[1]}px`);
-                else spanStyles.push(`line-height: 1`);
+                if (this.options.contentHtmlSize) spanStyles.push(`width: ${this.options.contentHtmlSize[0]}px; height: ${this.options.contentHtmlSize[1]}px`);
+                spanStyles.push("display: flex");
+                spanStyles.push("align-items: center");
+                spanStyles.push("justify-content: center");
 
                 divs.push(`<div style="${contentStyles.join("; ")};"><span style="${spanStyles.join("; ")}">${this.options.contentHtml}</span></div>`);
             }
