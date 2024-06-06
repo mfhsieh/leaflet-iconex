@@ -56,7 +56,8 @@
             backgroundOpacity: 1,
 
             contentHtml: "",
-            contentAnchor: [16, 16],  // the center point of the content layer, relative to the upper left point of the icon
+            contentHtmlSize: [18, 18],
+            contentHtmlAnchor: [16, 16],  // the center point of the content layer, relative to the upper left point of the icon
         },
 
         initialize: function (options) {
@@ -98,14 +99,15 @@
             if (this.options.contentHtml) {
                 const contentStyles = [];
                 contentStyles.push(`position: absolute`);
-                if (this.options.contentAnchor) contentStyles.push(`left: ${this.options.contentAnchor[0] * iconScale}px; top: ${this.options.contentAnchor[1] * iconScale}px`);
+                if (this.options.contentHtmlAnchor) contentStyles.push(`left: ${this.options.contentHtmlAnchor[0] * iconScale}px; top: ${this.options.contentHtmlAnchor[1] * iconScale}px`);
                 contentStyles.push("display: flex");
                 contentStyles.push("align-items: center");
                 contentStyles.push(`transform: translate(-50%, -50%) scale(${iconScale})`);
 
                 const spanStyles = [];
                 spanStyles.push("text-align: center");
-                spanStyles.push("line-height: 1");
+                if (this.options.contentHtmlSize) spanStyles.push(`line-height: ${this.options.contentHtmlSize[1]}px`);
+                else spanStyles.push(`line-height: 1`);
 
                 divs.push(`<div style="${contentStyles.join("; ")};"><span style="${spanStyles.join("; ")}">${this.options.contentHtml}</span></div>`);
             }

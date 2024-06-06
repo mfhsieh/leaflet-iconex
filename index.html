@@ -89,6 +89,7 @@
             contentHtml: '88',
             iconFill: "rgba(var(--primary-rgb), 1)",
             iconScale: 18 / 16,
+            contentHtmlSize: [20, 20],
         });
         const marker1_4 = L.marker([25.01, 121.51], { icon: icon1_4 }).addTo(map);
 
@@ -97,6 +98,7 @@
             contentHtml: '正',
             iconFill: "rgba(var(--primary-rgb), 1)",
             iconScale: 16 / 16,
+            contentHtmlSize: [20, 20],
         });
         const marker1_5 = L.marker([25.00, 121.51], { icon: icon1_5 }).addTo(map);
 
@@ -111,6 +113,9 @@
 </svg>`,
             backgroundHtmlSize: [32, 40],
             backgroundHtmlAnchor: [16, 20],
+
+            contentHtmlSize: [24, 24],
+            contentHtmlAnchor: [16, 16],
         }
 
         const icon2_1 = new L.Control.IconEx({
@@ -174,6 +179,9 @@
             iconHtmlPopupAnchor: [0, 0],
 
             backgroundHtml: "",
+
+            contentHtmlSize: [24, 24],
+            contentHtmlAnchor: [12, 12],
         }
 
         const icon3_1 = new L.Control.IconEx({
@@ -182,7 +190,6 @@
                 contentHtml: '88',
                 iconFill: "rgba(var(--primary-rgb), 1)",
                 iconScale: 24 / 16,
-                contentAnchor: [12, 12],
             }
         });
         const marker3_1 = L.marker([25.04, 121.53], { icon: icon3_1 }).addTo(map);
@@ -193,7 +200,6 @@
                 contentHtml: '正',
                 iconFill: "rgba(var(--primary-rgb), 1)",
                 iconScale: 22 / 16,
-                contentAnchor: [12, 12],
             }
         });
         const marker3_2 = L.marker([25.03, 121.53], { icon: icon3_2 }).addTo(map);
@@ -204,7 +210,6 @@
                 contentHtml: '正',
                 iconFill: "rgba(var(--primary-rgb), 1)",
                 iconScale: 20 / 16,
-                contentAnchor: [12, 12],
             }
         });
         const marker3_3 = L.marker([25.02, 121.53], { icon: icon3_3 }).addTo(map);
@@ -215,7 +220,6 @@
                 contentHtml: '正',
                 iconFill: "rgba(var(--primary-rgb), 1)",
                 iconScale: 18 / 16,
-                contentAnchor: [12, 12],
             }
         });
         const marker3_4 = L.marker([25.01, 121.53], { icon: icon3_4 }).addTo(map);
@@ -226,7 +230,6 @@
                 contentHtml: '正',
                 iconFill: "rgba(var(--primary-rgb), 1)",
                 iconScale: 16 / 16,
-                contentAnchor: [12, 12],
             }
         });
         const marker3_5 = L.marker([25.00, 121.53], { icon: icon3_5 }).addTo(map);
