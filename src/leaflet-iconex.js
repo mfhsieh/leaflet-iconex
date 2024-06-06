@@ -66,18 +66,26 @@
             const iconScale = this.options.iconScale ? this.options.iconScale : 1;
             const divs = [];
 
-            if (this.options.iconHtmlSize) this.options.iconSize = [this.options.iconHtmlSize[0] * iconScale, this.options.iconHtmlSize[1] * iconScale];
-            if (this.options.iconHtmlAnchor) this.options.iconAnchor = [this.options.iconHtmlAnchor[0] * iconScale, this.options.iconHtmlAnchor[1] * iconScale];
-            if (this.options.iconHtmlPopupAnchor) this.options.popupAnchor = [this.options.iconHtmlPopupAnchor[0] * iconScale, this.options.iconHtmlPopupAnchor[1] * iconScale];
+            if (this.options.iconHtmlSize)
+                this.options.iconSize = [this.options.iconHtmlSize[0] * iconScale, this.options.iconHtmlSize[1] * iconScale];
+            if (this.options.iconHtmlAnchor)
+                this.options.iconAnchor = [this.options.iconHtmlAnchor[0] * iconScale, this.options.iconHtmlAnchor[1] * iconScale];
+            if (this.options.iconHtmlPopupAnchor)
+                this.options.popupAnchor = [this.options.iconHtmlPopupAnchor[0] * iconScale, this.options.iconHtmlPopupAnchor[1] * iconScale];
 
             if (this.options.iconHtml) {
                 const iconStyles = [];
                 iconStyles.push(`position: absolute`);
-                if (this.options.iconHtmlSize) iconStyles.push(`width: ${this.options.iconHtmlSize[0]}px; height: ${this.options.iconHtmlSize[1]}px`);
-                if (this.options.iconFill) iconStyles.push(`fill: ${this.options.iconFill}`);
-                if (this.options.iconOpacity) iconStyles.push(`opacity: ${this.options.iconOpacity}`);
-                if (this.options.iconStroke) iconStyles.push(`stroke: ${this.options.iconStroke}`);
-                if (this.options.iconStrokeOpacity) iconStyles.push(`stroke-opacity: ${this.options.iconStrokeOpacity}`);
+                if (this.options.iconHtmlSize)
+                    iconStyles.push(`width: ${this.options.iconHtmlSize[0]}px; height: ${this.options.iconHtmlSize[1]}px`);
+                if (this.options.iconFill)
+                    iconStyles.push(`fill: ${this.options.iconFill}`);
+                if (this.options.iconOpacity)
+                    iconStyles.push(`opacity: ${this.options.iconOpacity}`);
+                if (this.options.iconStroke)
+                    iconStyles.push(`stroke: ${this.options.iconStroke}`);
+                if (this.options.iconStrokeOpacity)
+                    iconStyles.push(`stroke-opacity: ${this.options.iconStrokeOpacity}`);
                 iconStyles.push(`transform: translate(-50%, -50%) scale(${iconScale}) translate(${this.options.iconHtmlSize[0] / 2}px, ${this.options.iconHtmlSize[1] / 2}px)`);
 
                 divs.push(`<div style="${iconStyles.join("; ")};">${this.options.iconHtml}</div>`);
@@ -86,10 +94,14 @@
             if (this.options.backgroundHtml) {
                 const backgroundStyles = [];
                 backgroundStyles.push(`position: absolute`);
-                if (this.options.backgroundHtmlSize) backgroundStyles.push(`width: ${this.options.backgroundHtmlSize[0]}px; height: ${this.options.backgroundHtmlSize[1]}px`);
-                if (this.options.backgroundHtmlAnchor) backgroundStyles.push(`left: ${this.options.backgroundHtmlAnchor[0] * iconScale}px; top: ${this.options.backgroundHtmlAnchor[1] * iconScale}px`);
-                if (this.options.backgroundFill) backgroundStyles.push(`fill: ${this.options.backgroundFill}`);
-                if (this.options.backgroundOpacity) backgroundStyles.push(`opacity: ${this.options.backgroundOpacity}`);
+                if (this.options.backgroundHtmlSize)
+                    backgroundStyles.push(`width: ${this.options.backgroundHtmlSize[0]}px; height: ${this.options.backgroundHtmlSize[1]}px`);
+                if (this.options.backgroundHtmlAnchor)
+                    backgroundStyles.push(`left: ${this.options.backgroundHtmlAnchor[0] * iconScale}px; top: ${this.options.backgroundHtmlAnchor[1] * iconScale}px`);
+                if (this.options.backgroundFill)
+                    backgroundStyles.push(`fill: ${this.options.backgroundFill}`);
+                if (this.options.backgroundOpacity)
+                    backgroundStyles.push(`opacity: ${this.options.backgroundOpacity}`);
                 backgroundStyles.push(`transform: translate(-50%, -50%) scale(${iconScale})`);
 
                 divs.push(`<div style="${backgroundStyles.join("; ")};">${this.options.backgroundHtml}</div>`);
@@ -99,17 +111,16 @@
             if (this.options.contentHtml) {
                 const contentStyles = [];
                 contentStyles.push(`position: absolute`);
-                if (this.options.contentHtmlSize) contentStyles.push(`width: ${this.options.contentHtmlSize[0]}px; height: ${this.options.contentHtmlSize[1]}px`);
-                if (this.options.contentHtmlAnchor) contentStyles.push(`left: ${this.options.contentHtmlAnchor[0] * iconScale}px; top: ${this.options.contentHtmlAnchor[1] * iconScale}px`);
+                if (this.options.contentHtmlSize)
+                    contentStyles.push(`width: ${this.options.contentHtmlSize[0]}px; height: ${this.options.contentHtmlSize[1]}px`);
+                if (this.options.contentHtmlAnchor)
+                    contentStyles.push(`left: ${this.options.contentHtmlAnchor[0] * iconScale}px; top: ${this.options.contentHtmlAnchor[1] * iconScale}px`);
                 contentStyles.push(`transform: translate(-50%, -50%) scale(${iconScale})`);
                 contentStyles.push("display: flex");
                 contentStyles.push("align-items: center");
                 contentStyles.push("justify-content: center");
                 contentStyles.push("text-align: center");
 
-                const spanStyles = [];
-
-                // divs.push(`<div style="${contentStyles.join("; ")};"><span style="${spanStyles.join("; ")}">${this.options.contentHtml}</span></div>`);
                 divs.push(`<div style="${contentStyles.join("; ")};">${this.options.contentHtml}</div>`);
             }
 
