@@ -58,6 +58,7 @@
             contentHtml: "",
             contentHtmlSize: null,
             contentHtmlAnchor: [16, 16],  // the center point of the content layer, relative to the upper left point of the icon
+            contentColor: null,
         },
 
         initialize: function (options) {
@@ -115,6 +116,8 @@
                     contentStyles.push(`width: ${this.options.contentHtmlSize[0]}px; height: ${this.options.contentHtmlSize[1]}px`);
                 if (this.options.contentHtmlAnchor)
                     contentStyles.push(`left: ${this.options.contentHtmlAnchor[0] * iconScale}px; top: ${this.options.contentHtmlAnchor[1] * iconScale}px`);
+                if (this.options.contentColor)
+                    contentStyles.push(`color: ${this.options.contentColor}`);
                 contentStyles.push(`transform: translate(-50%, -50%) scale(${iconScale})`);
                 contentStyles.push("display: flex");
                 contentStyles.push("align-items: center");
