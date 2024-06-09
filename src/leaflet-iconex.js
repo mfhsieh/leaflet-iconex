@@ -1,5 +1,5 @@
 /* 
- * Leaflet ControlIconEx v0.1 - 2024-06-02
+ * Leaflet Control IconEx v0.1 - 2024-06-02
  * 
  * Copyright 2024 mfhsieh
  * mfhsieh@gmail.com 
