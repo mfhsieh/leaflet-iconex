@@ -31,6 +31,20 @@
             height: calc(var(--vh, 1vh) * 100);
             width: 100vw;
         }
+
+        .square {
+            width: 24px;
+            height: 24px;
+            border-color: white;
+            border-radius: 4px;
+        }
+
+        .round {
+            width: 24px;
+            height: 24px;
+            border-color: white;
+            border-radius: 50%;
+        }
     </style>
 </head>
 
@@ -44,265 +58,117 @@
             document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
         }
 
+        function getRandomElem(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
         set_viewport();
         window.addEventListener("resize", set_viewport);
 
-        let map = new L.Map("map", {
-            center: [25.02, 121.52],
+        const latLngCenter = [25.0487037, 121.5143449];
+        const map = new L.Map("map", {
+            center: latLngCenter,
             zoom: 13,
             zoomControl: false,
         });
 
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            minZoom: 7,
+            minZoom: 1,
             maxZoom: 19,
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
         }).addTo(map);
 
-        const icon1_1 = new L.Control.IconEx({
-            className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-primary",
-            contentHtml: '<i class="fas fa-h-square"></i>',
-            iconFill: "rgba(var(--primary-rgb), 1)",
-            iconScale: 24 / 16,
-        });
-        const marker1_1 = L.marker([25.04, 121.51], { icon: icon1_1 }).addTo(map);
-
-        const icon1_2 = new L.Control.IconEx({
-            className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-white",
-            contentHtml: '<i class="fas fa-h-square"></i>',
-            backgroundFill: "rgba(var(--primary-rgb), 1)",
-            iconFill: "rgba(var(--primary-rgb), 1)",
-            iconScale: 22 / 16,
-        });
-        const marker1_2 = L.marker([25.03, 121.51], { icon: icon1_2 }).addTo(map);
-
-        const icon1_3 = new L.Control.IconEx({
-            className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-primary",
-            contentHtml: '88',
-            iconFill: "rgba(var(--primary-rgb), 1)",
-            iconScale: 20 / 16,
-            contentColor: "#0d6efd",
-        });
-        const marker1_3 = L.marker([25.02, 121.51], { icon: icon1_3 }).addTo(map);
-
-        const icon1_4 = new L.Control.IconEx({
-            className: "leaflet-iconex-fontsize-18 leaflet-iconex-color-white leaflet-iconex-reverse1",
-            contentHtml: '88',
-            iconFill: "rgba(var(--primary-rgb), 1)",
-            iconScale: 18 / 16,
-            contentHtmlSize: [22, 22],
-        });
-        const marker1_4 = L.marker([25.01, 121.51], { icon: icon1_4 }).addTo(map);
-
-        const icon1_5 = new L.Control.IconEx({
-            className: "leaflet-iconex-fontsize-18 leaflet-iconex-color-white leaflet-iconex-reverse1",
-            contentHtml: '正',
-            iconFill: "rgba(var(--primary-rgb), 1)",
-            iconScale: 16 / 16,
-            contentHtmlSize: [22, 22],
-        });
-        const marker1_5 = L.marker([25.00, 121.51], { icon: icon1_5 }).addTo(map);
-
-        const options2 = {
-            iconHtml: `
+        const optionList = [
+            {
+            },
+            {
+                iconHtml: `
 <svg width="32" height="40" viewBox="0 0 32 40" xmlns="http://www.w3.org/2000/svg">
 	<path stroke-width="1" d="m 2.5,0.5 c -1.107998,0 -2,0.892002 -2,2 v 27 c 0,1.107998 0.892002,2 2,2 h 4.7044922 a 4.1676656,4.1676656 24.095192 0 1 3.1064288,1.38926 L 16,39.25 21.68908,32.88926 A 4.1676657,4.1676657 155.90481 0 1 24.795508,31.5 H 29.5 c 1.107998,0 2,-0.892002 2,-2 v -27 c 0,-1.107998 -0.892002,-2 -2,-2 z" />
 </svg>`,
-            backgroundHtml: `
+                backgroundHtml: `
 <svg width="32" height="40" viewBox="0 0 32 40" xmlns="http://www.w3.org/2000/svg">
-	<path stroke-width="0" d="M 5,3 C 3.892001,3 3,3.892001 3,5 v 20.028625 c 0,1.08876 0.022359,3.061889 0.8932964,3.63942 C 4.4251287,29.020704 5.8826147,29 6.9713752,29 h 1.2427966 a 4.4084708,4.4084708 24.093187 0 1 3.2857102,1.4693 l 2.661918,2.975769 a 2.4663321,2.4663321 0 0 0 3.6764,0 L 20.500118,30.4693 A 4.4084708,4.4084708 155.90681 0 1 23.785828,29 H 27 c 1.107999,0 2,-0.892001 2,-2 V 5 C 29,3.892001 28.107999,3 27,3 Z" />
+	<path fill="#ffffff" stroke-width="0" d="M 5,3 C 3.892001,3 3,3.892001 3,5 v 20.028625 c 0,1.08876 0.022359,3.061889 0.8932964,3.63942 C 4.4251287,29.020704 5.8826147,29 6.9713752,29 h 1.2427966 a 4.4084708,4.4084708 24.093187 0 1 3.2857102,1.4693 l 2.661918,2.975769 a 2.4663321,2.4663321 0 0 0 3.6764,0 L 20.500118,30.4693 A 4.4084708,4.4084708 155.90681 0 1 23.785828,29 H 27 c 1.107999,0 2,-0.892001 2,-2 V 5 C 29,3.892001 28.107999,3 27,3 Z" />
 </svg>`,
-            backgroundHtmlSize: [32, 40],
-            backgroundHtmlAnchor: [16, 20],
-
-            // contentHtmlSize: [22, 22],
-            contentHtmlAnchor: [16, 16],
-        }
-
-        const icon2_1 = new L.Control.IconEx({
-            ...options2, ...{
-                className: "leaflet-iconex-fontsize-22 leaflet-iconex-color-primary",
-                contentHtml: '<i class="fas fa-h-square"></i>',
-                iconFill: "rgba(var(--primary-rgb), 1)",
-                iconScale: 24 / 16,
-            }
-        });
-        const marker2_1 = L.marker([25.04, 121.52], { icon: icon2_1 }).addTo(map);
-
-        const icon2_2 = new L.Control.IconEx({
-            ...options2, ...{
-                className: "leaflet-iconex-fontsize-22 leaflet-iconex-color-white",
-                contentHtml: '<i class="fas fa-h-square"></i>',
-                backgroundFill: "rgba(var(--primary-rgb), 1)",
-                iconFill: "rgba(var(--primary-rgb), 1)",
-                iconScale: 22 / 16,
-            }
-        });
-        const marker2_2 = L.marker([25.03, 121.52], { icon: icon2_2 }).addTo(map);
-
-        const icon2_3 = new L.Control.IconEx({
-            ...options2, ...{
-                className: "leaflet-iconex-fontsize-22 leaflet-iconex-color-primary",
-                contentHtml: '88',
-                iconFill: "rgba(var(--primary-rgb), 1)",
-                iconScale: 20 / 16,
-                contentColor: "#0d6efd",
-            }
-        });
-        const marker2_3 = L.marker([25.02, 121.52], { icon: icon2_3 }).addTo(map);
-
-        const icon2_4 = new L.Control.IconEx({
-            ...options2, ...{
-                className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-white leaflet-iconex-reverse2",
-                contentHtml: '88',
-                iconFill: "rgba(var(--primary-rgb), 1)",
-                iconScale: 18 / 16,
-                contentHtmlSize: [24, 24],
-            }
-        });
-        const marker2_4 = L.marker([25.01, 121.52], { icon: icon2_4 }).addTo(map);
-
-        const icon2_5 = new L.Control.IconEx({
-            ...options2, ...{
-                className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-white leaflet-iconex-reverse2",
-                contentHtml: '正',
-                iconFill: "rgba(var(--primary-rgb), 1)",
-                iconScale: 16 / 16,
-                contentHtmlSize: [24, 24],
-            }
-        });
-        const marker2_5 = L.marker([25.00, 121.52], { icon: icon2_5 }).addTo(map);
-
-        const options3 = {
-            iconHtml: `
-<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-	<rect stroke-width="1" width="23" height="23" x="0.5" y="0.5" rx="3" ry="3" />
-</svg>`,
-            iconHtmlSize: [24, 24],
-            iconHtmlAnchor: [12, 24],
-            iconHtmlPopupAnchor: [0, 0],
-
-            backgroundHtml: "",
-
-            // contentHtmlSize: [24, 24],
-            contentHtmlAnchor: [12, 12],
-        }
-
-        const icon3_1 = new L.Control.IconEx({
-            ...options3, ...{
-                className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-white",
-                contentHtml: '88',
-                iconFill: "rgba(var(--primary-rgb), 1)",
-                iconScale: 24 / 16,
-            }
-        });
-        const marker3_1 = L.marker([25.04, 121.53], { icon: icon3_1 }).addTo(map);
-
-        const icon3_2 = new L.Control.IconEx({
-            ...options3, ...{
-                className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-white",
-                contentHtml: '正',
-                iconFill: "rgba(var(--primary-rgb), 1)",
-                iconScale: 22 / 16,
-            }
-        });
-        const marker3_2 = L.marker([25.03, 121.53], { icon: icon3_2 }).addTo(map);
-
-        const icon3_3 = new L.Control.IconEx({
-            ...options3, ...{
-                className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-white",
-                contentHtml: '正',
-                iconFill: "rgba(var(--primary-rgb), 1)",
-                iconScale: 20 / 16,
-                contentColor: "#c0c000",
-            }
-        });
-        const marker3_3 = L.marker([25.02, 121.53], { icon: icon3_3 }).addTo(map);
-
-        const icon3_4 = new L.Control.IconEx({
-            ...options3, ...{
-                className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-white",
-                contentHtml: '正',
-                iconFill: "rgba(var(--primary-rgb), 1)",
-                iconScale: 18 / 16,
-            }
-        });
-        const marker3_4 = L.marker([25.01, 121.53], { icon: icon3_4 }).addTo(map);
-
-        const icon3_5 = new L.Control.IconEx({
-            ...options3, ...{
-                className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-white",
-                contentHtml: '正',
-                iconFill: "rgba(var(--primary-rgb), 1)",
-                iconScale: 16 / 16,
-            }
-        });
-        const marker3_5 = L.marker([25.00, 121.53], { icon: icon3_5 }).addTo(map);
-
-        const options4 = {
-            iconHtml: `
+                backgroundHtmlSize: [32, 40],
+                backgroundHtmlAnchor: [16, 20],
+                fontSize: 20,
+            },
+            {
+                iconHtml: `
 <svg width="32" height="48" viewBox="0 0 32 48" xmlns="http://www.w3.org/2000/svg">
 	<path stroke-width="1" d="M 16,0.5 C 7.4396,0.5 0.5,7.4396 0.5,16 0.5,20.2802 2.0133,23.9336 5.0398,26.9602 16,37.9203 13,45 16,47.3635 19,45 16,37.9203 26.9602,26.9602 29.9867,23.9336 31.5,20.2802 31.5,16 31.5,7.4396 24.5604,0.5 16,0.5 Z" />
 </svg>`,
-            iconHtmlSize: [32, 48],
-            iconHtmlAnchor: [16, 48],
-            iconHtmlPopupAnchor: [0, -32],
+                iconHtmlSize: [32, 48],
+                iconHtmlAnchor: [16, 48],
+                iconHtmlPopupAnchor: [0, -32],
+                // iconScale: 40 / 48,
+            },
+            {
+                class: "template",
+                iconHtmlTemplate: '<div class="square" style="background-color: __iconFill__"></div>',
+                backgroundHtml: "",
+                iconHtmlSize: [24, 24],
+                iconHtmlAnchor: [12, 24],
+                iconHtmlPopupAnchor: [0, -12],
+                contentHtmlAnchor: [12, 12],
+                contentColor: "#fff",
+                fontSize: 16,
+            },
+            {
+                class: "template",
+                iconHtmlTemplate: '<div class="round" style="background-color: __iconFill__"></div>',
+                backgroundHtml: "",
+                iconHtmlSize: [24, 24],
+                iconHtmlAnchor: [12, 24],
+                iconHtmlPopupAnchor: [0, -12],
+                contentHtmlAnchor: [12, 12],
+                contentColor: "#fff",
+                fontSize: 14,
+            },
+        ];
+
+        const contentHtmlList = [
+            `<i class="fas fa-hamburger"></i>`,
+            `<i class="fas fa-user-tie"></i>`,
+            `<i class="fas fa-house-user"></i>`,
+            `<i class="fas fa-taxi"></i>`,
+            `<i class="fas fa-university"></i>`,
+            `<i class="fas fa-umbrella-beach"></i>`,
+            `<span style="font-weight: bold">A</span>`,
+            `<span style="font-weight: bold">B</span>`,
+            `<span style="font-weight: bold">8</span>`,
+            `<span style="font-weight: bold">5</span>`,
+            `<span style="font-weight: bold">正</span>`,
+        ];
+
+        const colorList = ["#a11", "#1a1", "#11a", "#aa1", "#1aa", "#a1a"];
+        const strokeList = ["#888", "#fff"];
+
+        for (let i = -3; i <= 3; i++) {
+            for (let j = -3; j <= 3; j++) {
+                const latlng = [latLngCenter[0] + i * 0.01, latLngCenter[1] + j * 0.01];
+                const option = getRandomElem(optionList);
+                const color = getRandomElem(colorList);
+
+                if (option.class === "template") option.iconHtml = option.iconHtmlTemplate.replace("__iconFill__", color);
+
+                const icon = new L.Control.IconEx({
+                    ...option,
+                    ...{
+                        className: "leaflet-iconex-fontsize-18",
+                        contentHtml: `<span style="font-size: ${option.fontSize ? option.fontSize : 18}px">${getRandomElem(contentHtmlList)}</span>`,
+                        // iconScale: (1 + Math.random() * .4 - .2) * (option.iconScale ? option.iconScale : 1),
+                        iconScale: option.iconScale ? option.iconScale : 1,
+                        iconFill: color,
+                        iconStroke: getRandomElem(strokeList),
+                        // backgroundFill: getRandomElem(colorList),
+                        contentColor: option.contentColor ? option.contentColor : color,
+                    }
+                });
+                const marker = L.marker(latlng, { icon: icon }).addTo(map);
+            }
         }
-
-        const icon4_1 = new L.Control.IconEx({
-            ...options4, ...{
-                className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-primary",
-                contentHtml: '<i class="fas fa-h-square"></i>',
-                iconFill: "rgba(var(--primary-rgb), 1)",
-                iconScale: 24 / 16,
-            }
-        });
-        const marker4_1 = L.marker([25.04, 121.54], { icon: icon4_1 }).addTo(map);
-
-        const icon4_2 = new L.Control.IconEx({
-            ...options4, ...{
-                className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-white",
-                contentHtml: '<i class="fas fa-h-square"></i>',
-                backgroundFill: "rgba(var(--primary-rgb), 1)",
-                iconFill: "rgba(var(--primary-rgb), 1)",
-                iconScale: 22 / 16,
-            }
-        });
-        const marker4_2 = L.marker([25.03, 121.54], { icon: icon4_2 }).addTo(map);
-
-        const icon4_3 = new L.Control.IconEx({
-            ...options4, ...{
-                className: "leaflet-iconex-fontsize-20 leaflet-iconex-color-primary",
-                contentHtml: '88',
-                iconFill: "rgba(var(--primary-rgb), 1)",
-                iconScale: 20 / 16,
-                contentColor: "#0d6efd",
-            }
-        });
-        const marker4_3 = L.marker([25.02, 121.54], { icon: icon4_3 }).addTo(map);
-
-        const icon4_4 = new L.Control.IconEx({
-            ...options4, ...{
-                className: "leaflet-iconex-fontsize-18 leaflet-iconex-color-white leaflet-iconex-reverse2",
-                contentHtml: '88',
-                iconFill: "rgba(var(--primary-rgb), 1)",
-                iconScale: 18 / 16,
-                contentHtmlSize: [22, 22],
-            }
-        });
-        const marker4_4 = L.marker([25.01, 121.54], { icon: icon4_4 }).addTo(map);
-
-        const icon4_5 = new L.Control.IconEx({
-            ...options4, ...{
-                className: "leaflet-iconex-fontsize-18 leaflet-iconex-color-white leaflet-iconex-reverse2",
-                contentHtml: '正',
-                iconFill: "rgba(var(--primary-rgb), 1)",
-                iconScale: 16 / 16,
-                contentHtmlSize: [22, 22],
-            }
-        });
-        const marker4_5 = L.marker([25.00, 121.54], { icon: icon4_5 }).addTo(map);
-
     </script>
 </body>
 

@@ -1,25 +1,29 @@
-/* 
- * Leaflet Control IconEx v0.1 - 2024-06-02
- * 
+/*
+ * Leaflet.IconEx v1.0.0 - 2024-06-15
+ *
  * Copyright 2024 mfhsieh
- * mfhsieh@gmail.com 
- * 
- * Licensed under the MIT license. 
- * 
- * Demos: 
+ * mfhsieh@gmail.com
+ *
+ * Licensed under the MIT license.
+ *
+ * Demos:
  * https://mfhsieh.github.io/leaflet-iconex/
- * 
- * Source: 
- * git@github.com:mfhsieh/leaflet-iconex.git 
- * 
+ *
+ * Source:
+ * git@github.com:mfhsieh/leaflet-iconex.git
+ *
  */
 @-moz-document url-prefix() {
 
     /* .leaflet-div-icon div:last-child,
     .leaflet-iconex div:last-child, */
     .leaflet-div-icon div:last-child .fa,
+    .leaflet-div-icon div:last-child .fab,
+    .leaflet-div-icon div:last-child .far,
     .leaflet-div-icon div:last-child .fas,
     .leaflet-iconex div:last-child .fa,
+    .leaflet-iconex div:last-child .fab,
+    .leaflet-iconex div:last-child .far,
     .leaflet-iconex div:last-child .fas {
         margin-top: .05rem;
         margin-bottom: -.05rem;
@@ -44,56 +48,3 @@
     -ms-text-size-adjust: none;
     -khtml-text-size-adjust: none;
 }
-
-.leaflet-iconex-fontsize-12 {
-    font-size: 12px;
-}
-
-.leaflet-iconex-fontsize-14 {
-    font-size: 14px;
-}
-
-.leaflet-iconex-fontsize-16 {
-    font-size: 16px;
-}
-
-.leaflet-iconex-fontsize-18 {
-    font-size: 18px;
-}
-
-.leaflet-iconex-fontsize-20 {
-    font-size: 20px;
-}
-
-.leaflet-iconex-fontsize-22 {
-    font-size: 22px;
-}
-
-.leaflet-iconex-fontsize-24 {
-    font-size: 22px;
-}
-
-.leaflet-iconex-color-primary {
-    color: rgba(var(--primary-rgb), 1);
-}
-
-.leaflet-iconex-color-white {
-    color: white;
-}
-
-.leaflet-iconex-reverse1 div:last-child,
-.leaflet-iconex-reverse2 div:last-child {
-    border-radius: 50%;
-    background-color: rgba(var(--primary-rgb), 1);
-}
-
-/* 
-.leaflet-iconex-reverse1 span {
-    width: 20px;
-    height: 20px;
-}
-
-.leaflet-iconex-reverse2 span {
-    width: 24px;
-    height: 24px;
-} */

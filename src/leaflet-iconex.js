@@ -1,27 +1,27 @@
-/* 
- * Leaflet Control IconEx v0.1 - 2024-06-02
- * 
+/*
+ * Leaflet.IconEx v1.0.0 - 2024-06-15
+ *
  * Copyright 2024 mfhsieh
- * mfhsieh@gmail.com 
- * 
- * Licensed under the MIT license. 
- * 
- * Demos: 
+ * mfhsieh@gmail.com
+ *
+ * Licensed under the MIT license.
+ *
+ * Demos:
  * https://mfhsieh.github.io/leaflet-iconex/
- * 
- * Source: 
- * git@github.com:mfhsieh/leaflet-iconex.git 
- * 
+ *
+ * Source:
+ * git@github.com:mfhsieh/leaflet-iconex.git
+ *
  */
 (function (factory) {
 
-    if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {  // eslint-disable-line no-undef
         // define an AMD module that relies on 'leaflet'
-        define(['leaflet'], factory);
+        define(['leaflet'], factory);  // eslint-disable-line no-undef
 
     } else if (typeof exports === 'object') {
         // define a Common JS module that relies on 'leaflet'
-        module.exports = factory(require('leaflet'));
+        module.exports = factory(require('leaflet'));  // eslint-disable-line no-undef
 
     } else if (typeof window !== 'undefined') {
         // attach your plugin to the global 'L' variable
