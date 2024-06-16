@@ -82,6 +82,13 @@
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
         }).addTo(map);
 
+        // const iconTest = new L.Control.IconEx({
+        //     contentHtml: `<i class="fas fa-house-user"></i>`,
+        //     iconFill: "#00c",
+        //     contentColor: "#00c",
+        // });
+        // L.marker([25.0887037, 121.5543449], { icon: iconTest }).addTo(map);
+
         const optionList = [
             {
             },
@@ -96,7 +103,7 @@
 </svg>`,
                 backgroundHtmlSize: [32, 40],
                 backgroundHtmlAnchor: [16, 20],
-                fontSize: 20,
+                contentFontSize: 20,
             },
             {
                 iconHtml: `
@@ -111,24 +118,24 @@
             {
                 typeIcon: "template",
                 iconHtmlTemplate: '<div class="square" style="background-color: __iconFill__; border-color: __iconStroke__"></div>',
-                backgroundHtml: "",
                 iconHtmlSize: [24, 24],
                 iconHtmlAnchor: [12, 24],
                 iconHtmlPopupAnchor: [0, -12],
+                backgroundHtml: "",
                 contentHtmlAnchor: [12, 12],
                 contentColor: "#fff",
-                fontSize: 16,
+                contentFontSize: 16,
             },
             {
                 typeIcon: "template",
                 iconHtmlTemplate: '<div class="round" style="background-color: __iconFill__; border-color: __iconStroke__"></div>',
-                backgroundHtml: "",
                 iconHtmlSize: [28, 28],
                 iconHtmlAnchor: [14, 28],
                 iconHtmlPopupAnchor: [0, -14],
+                backgroundHtml: "",
                 contentHtmlAnchor: [14, 14],
                 contentColor: "#fff",
-                fontSize: 16,
+                contentFontSize: 16,
             },
         ];
 
@@ -162,8 +169,7 @@
                 const icon = new L.Control.IconEx({
                     ...option,
                     ...{
-                        className: "leaflet-iconex-fontsize-18",
-                        contentHtml: `<span style="font-size: ${option.fontSize ? option.fontSize : 18}px">${getRandomElem(contentHtmlList)}</span>`,
+                        contentHtml: `<span>${getRandomElem(contentHtmlList)}</span>`,
                         // iconScale: (1 + Math.random() * .5 - .25) * (option.iconScale ? option.iconScale : 1),
                         iconFill: iconFill,
                         iconStroke: iconStroke,

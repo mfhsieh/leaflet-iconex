@@ -40,8 +40,8 @@
 	<path stroke-width="1" d="M 16,0.5 C 7.4396,0.5 0.5,7.4396 0.5,16 C 0.5,19.9768 1.7958,23.3692 4.4470,26.3333 L 16,39.25 27.5530,26.3333 C 30.2042,23.3692 31.5,19.9768 31.5,16 31.5,7.4396 24.5604,0.5 16,0.5 Z" />
 </svg>`,
             iconHtmlSize: [32, 40],
-            iconHtmlAnchor: [16, 40],  // the coordinates of the "tip" of the icon (relative to its top left corner)
-            iconHtmlPopupAnchor: [0, -24],  // the coordinates of the point from which popups will "open", relative to the icon anchor.
+            iconHtmlAnchor: [16, 40],
+            iconHtmlPopupAnchor: [0, -24],
             iconFill: "#0d6efd",
             iconOpacity: 1,
             iconStroke: "#ffffff",
@@ -52,14 +52,15 @@
 	<circle stroke-width="0" r="12" />
 </svg>`,
             backgroundHtmlSize: [24, 24],
-            backgroundHtmlAnchor: [16, 16],  // the center point of the background layer, relative to the upper left point of the icon
+            backgroundHtmlAnchor: [16, 16],
             backgroundFill: "#ffffff",
             backgroundOpacity: 1,
 
             contentHtml: "",
             contentHtmlSize: null,
-            contentHtmlAnchor: [16, 16],  // the center point of the content layer, relative to the upper left point of the icon
+            contentHtmlAnchor: [16, 16],
             contentColor: null,
+            contentFontSize: 18,
         },
 
         initialize: function (options) {
@@ -119,6 +120,8 @@
                     contentStyles.push(`left: ${this.options.contentHtmlAnchor[0] * iconScale}px; top: ${this.options.contentHtmlAnchor[1] * iconScale}px`);
                 if (this.options.contentColor)
                     contentStyles.push(`color: ${this.options.contentColor}`);
+                if (this.options.contentFontSize)
+                    contentStyles.push(`font-size: ${this.options.contentFontSize}px`);
                 contentStyles.push(`transform: translate(-50%, -50%) scale(${iconScale})`);
                 contentStyles.push("display: flex");
                 contentStyles.push("align-items: center");
