@@ -60,7 +60,7 @@
             contentHtmlSize: null,
             contentHtmlAnchor: [16, 16],
             contentColor: null,
-            contentFontSize: 18,
+            contentFontSize: 16,
         },
 
         initialize: function (options) {
