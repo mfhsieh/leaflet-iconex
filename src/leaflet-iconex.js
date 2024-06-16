@@ -33,6 +33,8 @@
 
     const icon = L.DivIcon.extend({
         options: {
+            iconScale: 1,
+
             iconHtml: `
 <svg width="32" height="40" viewBox="0 0 32 40" xmlns="http://www.w3.org/2000/svg">
 	<path stroke-width="1" d="M 16,0.5 C 7.4396,0.5 0.5,7.4396 0.5,16 C 0.5,19.9768 1.7958,23.3692 4.4470,26.3333 L 16,39.25 27.5530,26.3333 C 30.2042,23.3692 31.5,19.9768 31.5,16 31.5,7.4396 24.5604,0.5 16,0.5 Z" />
@@ -40,17 +42,16 @@
             iconHtmlSize: [32, 40],
             iconHtmlAnchor: [16, 40],  // the coordinates of the "tip" of the icon (relative to its top left corner)
             iconHtmlPopupAnchor: [0, -24],  // the coordinates of the point from which popups will "open", relative to the icon anchor.
-            iconScale: 1,
             iconFill: "#0d6efd",
             iconOpacity: 1,
             iconStroke: "#ffffff",
-            iconStrokeOpacity: .5,
+            iconStrokeOpacity: 1,
 
             backgroundHtml: `
-<svg width="26" height="26" viewBox="-13 -13 26 26" xmlns="http://www.w3.org/2000/svg">
-	<circle stroke-width="0" r="13" />
+<svg width="24" height="24" viewBox="-12 -12 24 24" xmlns="http://www.w3.org/2000/svg">
+	<circle stroke-width="0" r="12" />
 </svg>`,
-            backgroundHtmlSize: [26, 26],
+            backgroundHtmlSize: [24, 24],
             backgroundHtmlAnchor: [16, 16],  // the center point of the background layer, relative to the upper left point of the icon
             backgroundFill: "#ffffff",
             backgroundOpacity: 1,
