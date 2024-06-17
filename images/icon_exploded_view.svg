@@ -5,7 +5,7 @@
    viewBox="0 0 240 240"
    version="1.1"
    id="svg1"
-   sodipodi:docname="icon_round.svg"
+   sodipodi:docname="icon_exploded_view.svg"
    inkscape:export-filename="icon_exploded_view.svg"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -52,4 +52,54 @@
        id="path1-8"
        style="fill:#361357;fill-opacity:1;stroke-width:0.0312462" />
   </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:0px;font-family:'Noto Sans TC';-inkscape-font-specification:'Noto Sans TC Bold';fill:#ffffff;fill-opacity:1;stroke:none"
+     x="107.85184"
+     y="154.07407"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       x="107.85184"
+       y="154.07407">icon layer</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:0px;font-family:'Noto Sans TC';-inkscape-font-specification:'Noto Sans TC Bold';fill:#000000;fill-opacity:1;stroke:none"
+     x="85.03318"
+     y="89.298584"
+     id="text3"><tspan
+       sodipodi:role="line"
+       id="tspan3"
+       x="85.03318"
+       y="89.298584">background</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:0px;font-family:'Noto Sans TC';-inkscape-font-specification:'Noto Sans TC Bold';fill:#000000;fill-opacity:1;stroke:none"
+     x="105.02049"
+     y="103.23223"
+     id="text4"><tspan
+       sodipodi:role="line"
+       id="tspan4"
+       x="105.02049"
+       y="103.23223">layer</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:0px;font-family:'Noto Sans TC';-inkscape-font-specification:'Noto Sans TC Bold';fill:#000000;fill-opacity:1;stroke:none"
+     x="155.47426"
+     y="30.576"
+     id="text3-2"><tspan
+       sodipodi:role="line"
+       id="tspan3-9"
+       x="155.47426"
+       y="30.576">content</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:0px;font-family:'Noto Sans TC';-inkscape-font-specification:'Noto Sans TC Bold';fill:#000000;fill-opacity:1;stroke:none"
+     x="163.03931"
+     y="44.509647"
+     id="text4-2"><tspan
+       sodipodi:role="line"
+       id="tspan4-4"
+       x="163.03931"
+       y="44.509647">layer</tspan></text>
 </svg>
