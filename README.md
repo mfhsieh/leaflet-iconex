@@ -15,7 +15,7 @@ A Leaflet plugin that creates a DivIcon with three customizable layers (as shown
 
 Simply include the [JS](https://github.com/mfhsieh/leaflet-iconex/blob/main/dist/leaflet-iconex.min.js) and [CSS](https://github.com/mfhsieh/leaflet-iconex/blob/main/examples/demo.css) in the head.
 
-```
+```html
 <head>
     ...
     <script src="dist/leaflet-iconex.min.js"></script>
@@ -26,7 +26,7 @@ Simply include the [JS](https://github.com/mfhsieh/leaflet-iconex/blob/main/dist
 
 And add the control to the map.
 
-```
+```js
 const icon = new L.Control.IconEx({
     contentHtml: `<i class="fas fa-house-user"></i>`,
     iconFill: "#00c",
