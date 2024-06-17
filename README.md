@@ -3,7 +3,7 @@ Leaflet.IconEx
 
 A Leaflet plugin that creates a DivIcon with three customizable layers (as shown in the image). Tested on desktop and mobile versions of Chrome, Edge, Firefox, and Safari.
 
-* Demo Page: [demo](https://mfhsieh.github.io/leaflet-iconex/) 
+* Demo Page: [demo](https://mfhsieh.github.io/leaflet-iconex/) (Randomly combined icons.)
 * Current Version: v1.0.0
 
 <p align="center">
