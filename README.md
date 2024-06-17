@@ -13,12 +13,12 @@ A Leaflet plugin that creates a DivIcon with three customizable layers (as shown
 
 # Usage
 
-Simply include the [JS](https://github.com/mfhsieh/leaflet-iconex/blob/main/src/leaflet-iconex.js) and [CSS](https://github.com/mfhsieh/leaflet-iconex/blob/main/examples/demo.css) in the head.
+Simply include the [JS](https://github.com/mfhsieh/leaflet-iconex/blob/main/dist/leaflet-iconex.min.js) and [CSS](https://github.com/mfhsieh/leaflet-iconex/blob/main/examples/demo.css) in the head.
 
 ```
 <head>
     ...
-    <script src="leaflet-iconex.js"></script>
+    <script src="dist/leaflet-iconex.min.js"></script>
     <link rel="stylesheet" href="demo.css" />
     ...
 </head>
