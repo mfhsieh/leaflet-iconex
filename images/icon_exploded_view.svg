@@ -82,24 +82,37 @@
        id="tspan4"
        x="105.02049"
        y="103.23223">layer</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:0px;font-family:'Noto Sans TC';-inkscape-font-specification:'Noto Sans TC Bold';fill:#000000;fill-opacity:1;stroke:none"
-     x="155.47426"
-     y="30.576"
-     id="text3-2"><tspan
-       sodipodi:role="line"
-       id="tspan3-9"
-       x="155.47426"
-       y="30.576">content</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:0px;font-family:'Noto Sans TC';-inkscape-font-specification:'Noto Sans TC Bold';fill:#000000;fill-opacity:1;stroke:none"
-     x="163.03931"
-     y="44.509647"
-     id="text4-2"><tspan
-       sodipodi:role="line"
-       id="tspan4-4"
-       x="163.03931"
-       y="44.509647">layer</tspan></text>
+  <g
+     id="g5">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.795776"
+       id="rect4"
+       width="44.830002"
+       height="25.153999"
+       x="164.44713"
+       y="19.630947" />
+    <g
+       id="g4">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:0px;font-family:'Noto Sans TC';-inkscape-font-specification:'Noto Sans TC Bold';fill:#000000;fill-opacity:1;stroke:none"
+         x="163.91933"
+         y="28.163124"
+         id="text3-2"><tspan
+           sodipodi:role="line"
+           id="tspan3-9"
+           x="163.91933"
+           y="28.163124">content</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:0px;font-family:'Noto Sans TC';-inkscape-font-specification:'Noto Sans TC Bold';fill:#000000;fill-opacity:1;stroke:none"
+         x="171.48438"
+         y="42.096771"
+         id="text4-2"><tspan
+           sodipodi:role="line"
+           id="tspan4-4"
+           x="171.48438"
+           y="42.096771">layer</tspan></text>
+    </g>
+  </g>
 </svg>
