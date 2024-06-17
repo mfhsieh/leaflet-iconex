@@ -23,10 +23,15 @@
      inkscape:showpageshadow="2"
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1" />
-  <!-- iconHtml -->
-  <!-- backgroundHtml -->
-  <!-- contentHtml -->
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:export-bgcolor="#ffffff00" />
+  <rect
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.444235;stroke-dasharray:none;stroke-opacity:1"
+     id="blank"
+     width="240"
+     height="240"
+     x="0"
+     y="0" />
   <path
      fill="#000000"
      stroke="#808080"
@@ -49,7 +54,7 @@
   <path
      d="m 102.73665,26.272094 -4.0745,18.972708 20.48502,20.485024 a 3.2356767,1.2359185 31.717474 0 0 3.99952,1.999756 l 13.9732,-0.0376 a 3.2356767,1.2359185 31.717474 0 0 -0.0124,-1.999652 L 125.14644,53.731274 a 3.2356767,1.2359185 31.717474 0 1 0,-1.999756 h 7.99903 a 3.2356767,1.2359185 31.717474 0 1 3.99952,1.999756 l 11.94855,11.948556 a 3.2356767,1.2359185 31.717474 0 0 4.01202,2.012256 l 14.03591,0.0376 a 3.2356767,1.2359185 31.717474 0 0 0,-1.999756 L 146.64385,45.232302 104.64893,26.272094 a 2.4672035,0.94238788 31.717474 0 0 -1.91228,0 z M 152.03069,39.170534 132.9705,30.559078 115.66009,13.24867 a 2.4267575,0.92693888 31.717474 0 0 -2.99964,-1.49982 h -6.99915 a 2.4267575,0.92693888 31.717474 0 0 0,1.49982 l 9.07391,9.073904 -20.397536,-9.211388 a 9.7070304,3.7077557 31.717474 0 0 -7.62408,0 L 81.12677,39.170534 a 2.4267575,0.92693888 31.717474 0 0 1.912288,2.112248 l 7.06164,3.874528 a 2.4267575,0.92693888 31.717474 0 0 2.324704,0.19996 L 97.61229,21.147714 a 2.4672035,0.94238788 31.717474 0 1 1.912272,0 l 53.606018,24.209572 a 2.4267575,0.92693888 31.717474 0 0 1.91228,-0.19996 l -0.68741,-3.874528 a 2.4267575,0.92693888 31.717474 0 0 -2.32473,-2.112248 z"
      id="content-layer"
-     style="fill:#361357;fill-opacity:1;stroke:#c0c0c0;stroke-width:1.5;stroke-dasharray:none;stroke-opacity:1" />
+     style="fill:#361357;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-dasharray:none;stroke-opacity:1" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:0px;font-family:'Noto Sans TC';-inkscape-font-specification:'Noto Sans TC Bold';fill:#ffffff;fill-opacity:1;stroke:none"
@@ -85,24 +90,24 @@
        y="89.299004">background</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:0px;font-family:'Noto Sans TC';-inkscape-font-specification:'Noto Sans TC Bold';fill:#361357;fill-opacity:1;stroke:#c0c0c0;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
-     x="171.48438"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:0px;font-family:'Noto Sans TC';-inkscape-font-specification:'Noto Sans TC Bold';fill:#361357;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
+     x="163.48438"
      y="42.096771"
      id="text4"
      inkscape:label="text-layer3"><tspan
        sodipodi:role="line"
        id="tspan4-4"
-       x="171.48438"
+       x="163.48438"
        y="42.096771">layer</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:0px;font-family:'Noto Sans TC';-inkscape-font-specification:'Noto Sans TC Bold';fill:#361357;fill-opacity:1;stroke:#c0c0c0;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
-     x="163.91933"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:0px;font-family:'Noto Sans TC';-inkscape-font-specification:'Noto Sans TC Bold';fill:#361357;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
+     x="155.91933"
      y="28.163124"
      id="text5"
      inkscape:label="text-content"><tspan
        sodipodi:role="line"
        id="tspan3-9"
-       x="163.91933"
+       x="155.91933"
        y="28.163124">content</tspan></text>
 </svg>
