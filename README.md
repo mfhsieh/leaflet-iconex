@@ -45,7 +45,7 @@ The IconEx has three layers: the bottom is the icon layer, the middle is the bac
 
 | Option               | Type   | Default                                                                                              | Description                                                                                  |
 | -------------------- | ------ | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| iconScale            | Nymber | 1                                                                                                    | the scale factor of the icon                                                                 |
+| iconScale            | Number | 1                                                                                                    | the scale factor of the icon                                                                 |
 | iconHtml             | String | refer to [icon_round.svg](https://github.com/mfhsieh/leaflet-iconex/blob/main/images/icon_round.svg) | the HTML content of the icon layer                                                           |
 | iconHtmlSize         | Point  | [32, 40]                                                                                             | the size (in pixels) of the icon layer                                                       |
 | iconHtmlAnchor       | Point  | [16, 40]                                                                                             | the coordinates of the "tip" of the icon layer (relative to its top left corner)             |
