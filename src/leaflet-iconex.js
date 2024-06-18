@@ -1,5 +1,5 @@
 /*
- * Leaflet.IconEx v1.0.0 - 2024-06-15
+ * Leaflet.IconEx v1.1.0 - 2024-06-15
  *
  * Copyright 2024 mfhsieh
  * mfhsieh@gmail.com
@@ -26,12 +26,12 @@
     } else if (typeof window !== 'undefined') {
         // attach your plugin to the global 'L' variable
         if (typeof window.L === "undefined") throw "Leaflet must be loaded first.";
-        window.L.Control.IconEx = factory(window.L);
+        window.L.IconEx = factory(window.L);
     }
 })(function (L) {
     "use strict";
 
-    const icon = L.DivIcon.extend({
+    const IconEx = L.DivIcon.extend({
         options: {
             iconScale: 1,
 
@@ -139,5 +139,9 @@
         },
     });
 
-    return icon;
+    L.iconEx = function (options) {
+        return new IconEx(options);
+    };
+
+    return IconEx;
 });

@@ -4,7 +4,7 @@ Leaflet.IconEx
 A Leaflet plugin that creates a DivIcon with three customizable layers (as shown in the image). Tested on desktop and mobile versions of Chrome, Edge, Firefox, and Safari.
 
 * Demo Page: [demo](https://mfhsieh.github.io/leaflet-iconex/) (randomly combined icons)
-* Current Version: v1.0.0
+* Current Version: v1.1.0
 
 <p align="center">
   <img src="images/icon_exploded_view.svg" title="exploed icon" alt="exploed icon" />
@@ -27,7 +27,7 @@ Simply include the [JS](dist/leaflet-iconex.min.js) and [CSS](examples/demo.css)
 And add the control to the map.
 
 ```js
-const icon = new L.Control.IconEx({
+const icon = new L.IconEx({
     contentHtml: `<i class="fas fa-house-user"></i>`,
     iconFill: "#00c",
     contentColor: "#00c",
@@ -43,27 +43,27 @@ For more examples, refer to this [demo](https://mfhsieh.github.io/leaflet-iconex
 The IconEx has three layers: the bottom is the icon layer, the middle is the background layer, and the top is the content layer.
 
 
-| Option               | Type   | Default                                                                                              | Description                                                                                  |
-| -------------------- | ------ | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| iconScale            | Number | 1                                                                                                    | the scale factor of the icon                                                                 |
+| Option               | Type   | Default                                          | Description                                                                                  |
+| -------------------- | ------ | ------------------------------------------------ | -------------------------------------------------------------------------------------------- |
+| iconScale            | Number | 1                                                | the scale factor of the icon                                                                 |
 | iconHtml             | String | refer to [icon_round.svg](images/icon_round.svg) | the HTML content of the icon layer                                                           |
-| iconHtmlSize         | Point  | [32, 40]                                                                                             | the size (in pixels) of the icon layer                                                       |
-| iconHtmlAnchor       | Point  | [16, 40]                                                                                             | the coordinates of the "tip" of the icon layer (relative to its top left corner)             |
-| iconHtmlPopupAnchor  | Point  | [0, -24]                                                                                             | The coordinates of the point from which popups will open (relative to the anchor)            |
-| iconFill             | String | "#0d6efd"                                                                                            | the fill color of the icon layer                                                             |
-| iconOpacity          | Number | 1                                                                                                    | the opacity of the icon layer                                                                |
-| iconStroke           | String | "#ffffff"                                                                                            | the stroke color of the icon layer                                                           |
-| iconStrokeOpacity    | Number | 1                                                                                                    | the stroke opacity of the icon layer                                                         |
+| iconHtmlSize         | Point  | [32, 40]                                         | the size (in pixels) of the icon layer                                                       |
+| iconHtmlAnchor       | Point  | [16, 40]                                         | the coordinates of the "tip" of the icon layer (relative to its top left corner)             |
+| iconHtmlPopupAnchor  | Point  | [0, -24]                                         | The coordinates of the point from which popups will open (relative to the anchor)            |
+| iconFill             | String | "#0d6efd"                                        | the fill color of the icon layer                                                             |
+| iconOpacity          | Number | 1                                                | the opacity of the icon layer                                                                |
+| iconStroke           | String | "#ffffff"                                        | the stroke color of the icon layer                                                           |
+| iconStrokeOpacity    | Number | 1                                                | the stroke opacity of the icon layer                                                         |
 | backgroundHtml       | String | refer to [icon_round.svg](images/icon_round.svg) | the HTML content of the background layer                                                     |
-| backgroundHtmlSize   | Point  | [24, 24]                                                                                             | the size (in pixels) of the background layer                                                 |
-| backgroundHtmlAnchor | Point  | [16, 16]                                                                                             | the center point of the background layer (relative to the top left corner of the icon layer) |
-| backgroundFill       | String | "#ffffff"                                                                                            | the fill color of the background layer                                                       |
-| backgroundOpacity    | Number | 1                                                                                                    | the opacity of the background layer                                                          |
-| contentHtml          | String | ""                                                                                                   | the HTML content of the content layer                                                        |
-| contentHtmlSize      | Point  | null                                                                                                 | the size (in pixels) of the content layer                                                    |
-| contentHtmlAnchor    | Point  | [16, 16]                                                                                             | the center point of the content layer (relative to the top left corner of the icon layer)    |
-| contentColor         | String | null                                                                                                 | the color of the content layer                                                               |
-| contentFontSize      | Number | 16                                                                                                   | the font size (in pixels) of the content layer                                               |
+| backgroundHtmlSize   | Point  | [24, 24]                                         | the size (in pixels) of the background layer                                                 |
+| backgroundHtmlAnchor | Point  | [16, 16]                                         | the center point of the background layer (relative to the top left corner of the icon layer) |
+| backgroundFill       | String | "#ffffff"                                        | the fill color of the background layer                                                       |
+| backgroundOpacity    | Number | 1                                                | the opacity of the background layer                                                          |
+| contentHtml          | String | ""                                               | the HTML content of the content layer                                                        |
+| contentHtmlSize      | Point  | null                                             | the size (in pixels) of the content layer                                                    |
+| contentHtmlAnchor    | Point  | [16, 16]                                         | the center point of the content layer (relative to the top left corner of the icon layer)    |
+| contentColor         | String | null                                             | the color of the content layer                                                               |
+| contentFontSize      | Number | 16                                               | the font size (in pixels) of the content layer                                               |
 
 
 # Where
