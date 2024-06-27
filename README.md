@@ -1,14 +1,15 @@
 Leaflet.IconEx
 =
 
-A Leaflet plugin that creates a DivIcon with three customizable layers (as shown in the image). Tested on desktop and mobile versions of Chrome, Edge, Firefox, and Safari.
-
-* Demo Page: [demo](https://mfhsieh.github.io/leaflet-iconex/) (randomly combined icons)
-* Current Version: v1.1.0
+A [Leaflet](https://leafletjs.com/) plugin that creates a DivIcon with three customizable layers (as shown in the image).
 
 <p align="center">
   <img src="images/icon_exploded_view.svg" title="exploed icon" alt="exploed icon" />
 </p>
+
+* Demo Page: [demo](https://mfhsieh.github.io/leaflet-iconex/) (randomly combined icons)
+* Current Version: v1.1.0
+* Tested on desktop and mobile versions of Chrome, Edge, Firefox, and Safari.
 
 
 # Usage
@@ -35,7 +36,7 @@ const icon = new L.IconEx({
 L.marker(latlng, { icon: icon }).addTo(map);
 ```
 
-For more examples, refer to this [demo](https://mfhsieh.github.io/leaflet-iconex/) (code: [index.html](index.html), [demo.css](examples/demo.css)).
+For more details, refer to this [demo](https://mfhsieh.github.io/leaflet-iconex/) (code: [index.html](index.html), [demo.css](examples/demo.css)).
 
 
 # Options
