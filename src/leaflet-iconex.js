@@ -1,5 +1,5 @@
 /*
- * Leaflet.IconEx v1.1.0 - 2024-06-15
+ * Leaflet.IconEx v1.1.1 - 2025-03-23
  *
  * Copyright 2024 mfhsieh
  * mfhsieh@gmail.com
@@ -14,24 +14,51 @@
  *
  */
 (function (factory) {
+    if (typeof define === "function" && define.amd) {
+        // AMD module
+        define(["leaflet"], factory);
 
-    if (typeof define === 'function' && define.amd) {  // eslint-disable-line no-undef
-        // define an AMD module that relies on 'leaflet'
-        define(['leaflet'], factory);  // eslint-disable-line no-undef
+    } else if (typeof exports === "object") {
+        // CommonJS module
+        module.exports = factory(require("leaflet"));
 
-    } else if (typeof exports === 'object') {
-        // define a Common JS module that relies on 'leaflet'
-        module.exports = factory(require('leaflet'));  // eslint-disable-line no-undef
-
-    } else if (typeof window !== 'undefined') {
-        // attach your plugin to the global 'L' variable
+    } else if (typeof window !== "undefined") {
+        // Browser globals
         if (typeof window.L === "undefined") throw "Leaflet must be loaded first.";
         window.L.IconEx = factory(window.L);
     }
 })(function (L) {
     "use strict";
 
+    /**
+     * @class IconEx
+     * @extends L.DivIcon
+     * @classdesc A Leaflet plugin that extends L.DivIcon to create custom icons with SVG and HTML content.
+     * @param {Object} options - Icon options.
+     */
     const IconEx = L.DivIcon.extend({
+        /**
+         * @property {Object} options - Default options for the icon.
+         * @property {number} options.iconScale - Scale factor for the icon.
+         * @property {string} options.iconHtml - SVG or HTML content for the main icon.
+         * @property {Array<number>} options.iconHtmlSize - Size of the main icon [width, height].
+         * @property {Array<number>} options.iconHtmlAnchor - Anchor point of the main icon [x, y].
+         * @property {Array<number>} options.iconHtmlPopupAnchor - Popup anchor point of the main icon [x, y].
+         * @property {string} options.iconFill - Fill color of the main icon.
+         * @property {number} options.iconOpacity - Opacity of the main icon.
+         * @property {string} options.iconStroke - Stroke color of the main icon.
+         * @property {number} options.iconStrokeOpacity - Stroke opacity of the main icon.
+         * @property {string} options.backgroundHtml - SVG or HTML content for the background.
+         * @property {Array<number>} options.backgroundHtmlSize - Size of the background [width, height].
+         * @property {Array<number>} options.backgroundHtmlAnchor - Anchor point of the background [x, y].
+         * @property {string} options.backgroundFill - Fill color of the background.
+         * @property {number} options.backgroundOpacity - Opacity of the background.
+         * @property {string} options.contentHtml - HTML content for the center of the icon.
+         * @property {Array<number>} options.contentHtmlSize - Size of the content [width, height].
+         * @property {Array<number>} options.contentHtmlAnchor - Anchor point of the content [x, y].
+         * @property {string} options.contentColor - Color of the content.
+         * @property {number} options.contentFontSize - Font size of the content.
+         */
         options: {
             iconScale: 1,
 
@@ -63,6 +90,12 @@
             contentFontSize: 16,
         },
 
+        /**
+         * @function initialize
+         * @memberof IconEx.prototype
+         * @description Initializes the icon with the given options.
+         * @param {Object} options - Icon options.
+         */
         initialize: function (options) {
             L.Util.setOptions(this, options);
 
@@ -139,6 +172,13 @@
         },
     });
 
+    /**
+     * @function iconEx
+     * @memberof L
+     * @description Creates a new IconEx instance.
+     * @param {Object} options - Icon options.
+     * @returns {IconEx} A new IconEx instance.
+     */
     L.iconEx = function (options) {
         return new IconEx(options);
     };

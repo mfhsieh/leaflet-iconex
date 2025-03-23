@@ -8,7 +8,7 @@ A [Leaflet](https://leafletjs.com/) plugin that creates a DivIcon with three cus
 </p>
 
 * Demo Page: [demo](https://mfhsieh.github.io/leaflet-iconex/) (randomly combined icons)
-* Current Version: v1.1.0
+* Current Version: v1.1.1
 * Tested on desktop and mobile versions of Chrome, Edge, Firefox, and Safari.
 
 
