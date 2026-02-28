@@ -68,6 +68,7 @@
         /**
          * @type {IconExOptions}
          * @description Default options for the icon.
+         * @memberof IconEx
          */
         options: {
             iconScale: 1,
@@ -101,7 +102,7 @@
         },
 
         /**
-         * @function initialize
+         * @method initialize
          * @memberof IconEx.prototype
          * @description Processes the icon options, calculating dimensions and generating the final HTML.
          * @param {IconExOptions} [options] - Configuration options for the icon.
@@ -112,6 +113,7 @@
             const iconScale = this.options.iconScale ?? 1;
             const divs = [];
 
+            // Apply scale to standard Leaflet icon properties
             if (this.options.iconHtmlSize)
                 this.options.iconSize = [this.options.iconHtmlSize[0] * iconScale, this.options.iconHtmlSize[1] * iconScale];
             if (this.options.iconHtmlAnchor)
@@ -132,6 +134,8 @@
                     iconStyles.push(`stroke: ${this.options.iconStroke}`);
                 if (this.options.iconStrokeOpacity)
                     iconStyles.push(`stroke-opacity: ${this.options.iconStrokeOpacity}`);
+
+                // Center the icon SVG and apply scale
                 iconStyles.push(`transform: translate(-50%, -50%) scale(${iconScale}) translate(${this.options.iconHtmlSize[0] / 2}px, ${this.options.iconHtmlSize[1] / 2}px)`);
 
                 divs.push(`<div style="${iconStyles.join("; ")};">${this.options.iconHtml}</div>`);
@@ -148,6 +152,8 @@
                     backgroundStyles.push(`fill: ${this.options.backgroundFill}`);
                 if (this.options.backgroundOpacity)
                     backgroundStyles.push(`opacity: ${this.options.backgroundOpacity}`);
+
+                // Align background to anchor and apply scale
                 backgroundStyles.push(`transform: translate(-50%, -50%) scale(${iconScale})`);
 
                 divs.push(`<div style="${backgroundStyles.join("; ")};">${this.options.backgroundHtml}</div>`);
@@ -167,6 +173,8 @@
                     const fontSizeWithUnit = typeof fontSize === 'number' ? `${fontSize}px` : fontSize;
                     contentStyles.push(`font-size: ${fontSizeWithUnit}`);
                 }
+
+                // Align content to anchor and apply scale
                 contentStyles.push(`transform: translate(-50%, -50%) scale(${iconScale})`);
                 contentStyles.push("display: flex");
                 contentStyles.push("align-items: center");

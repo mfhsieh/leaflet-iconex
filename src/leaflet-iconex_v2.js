@@ -19,7 +19,6 @@ import L from 'leaflet';
  * @class IconEx
  * @extends L.DivIcon
  * @classdesc A Leaflet plugin that extends L.DivIcon to create custom icons with SVG and HTML content.
- * @param {IconExOptions} [options] - Configuration options for the icon.
  */
 class IconEx extends L.DivIcon {
     /**
@@ -54,6 +53,7 @@ class IconEx extends L.DivIcon {
      * @static
      * @type {IconExOptions}
      * @description Default options for the icon.
+     * @memberof IconEx
      */
     static defaultOptions = {
         iconScale: 1,
@@ -96,7 +96,7 @@ class IconEx extends L.DivIcon {
     }
 
     /**
-     * @function initialize
+     * @method initialize
      * @memberof IconEx.prototype
      * @description Processes the icon options, calculating dimensions and generating the final HTML.
      * @param {IconExOptions} [options] - Configuration options for the icon.
@@ -107,6 +107,7 @@ class IconEx extends L.DivIcon {
         const iconScale = this.options.iconScale ?? 1;
         const divs = [];
 
+        // Apply scale to standard Leaflet icon properties
         if (this.options.iconHtmlSize)
             this.options.iconSize = [this.options.iconHtmlSize[0] * iconScale, this.options.iconHtmlSize[1] * iconScale];
         if (this.options.iconHtmlAnchor)
@@ -127,6 +128,8 @@ class IconEx extends L.DivIcon {
                 iconStyles.push(`stroke: ${this.options.iconStroke}`);
             if (this.options.iconStrokeOpacity)
                 iconStyles.push(`stroke-opacity: ${this.options.iconStrokeOpacity}`);
+
+            // Center the icon SVG and apply scale
             iconStyles.push(`transform: translate(-50%, -50%) scale(${iconScale}) translate(${this.options.iconHtmlSize[0] / 2}px, ${this.options.iconHtmlSize[1] / 2}px)`);
 
             divs.push(`<div style="${iconStyles.join("; ")};">${this.options.iconHtml}</div>`);
@@ -143,6 +146,8 @@ class IconEx extends L.DivIcon {
                 backgroundStyles.push(`fill: ${this.options.backgroundFill}`);
             if (this.options.backgroundOpacity)
                 backgroundStyles.push(`opacity: ${this.options.backgroundOpacity}`);
+
+            // Align background to anchor and apply scale
             backgroundStyles.push(`transform: translate(-50%, -50%) scale(${iconScale})`);
 
             divs.push(`<div style="${backgroundStyles.join("; ")};">${this.options.backgroundHtml}</div>`);
@@ -162,6 +167,8 @@ class IconEx extends L.DivIcon {
                 const fontSizeWithUnit = typeof fontSize === 'number' ? `${fontSize}px` : fontSize;
                 contentStyles.push(`font-size: ${fontSizeWithUnit}`);
             }
+
+            // Align content to anchor and apply scale
             contentStyles.push(`transform: translate(-50%, -50%) scale(${iconScale})`);
             contentStyles.push("display: flex");
             contentStyles.push("align-items: center");
@@ -181,6 +188,7 @@ class IconEx extends L.DivIcon {
 
 /**
  * Creates a new IconEx instance.
+ * @function iconEx
  * @param {IconExOptions} [options] - Configuration options for the icon.
  * @returns {IconEx} A new IconEx instance.
  */
