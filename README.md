@@ -38,11 +38,11 @@ L.marker(latlng, { icon: icon }).addTo(map);
 
 ### Leaflet 2.x (ESM)
 
-For Leaflet 2.x, use the ESM-ready version [leaflet-iconex_v2.js](src/leaflet-iconex_v2.js).
+For Leaflet 2.x, use the ESM-ready version [leaflet-iconex_v2.js](dist/leaflet-iconex_v2.min.js).
 
 ```js
 import L from 'leaflet';
-import IconEx from './src/leaflet-iconex_v2.js';
+import IconEx from './dist/leaflet-iconex_v2.min.js';
 
 const icon = new IconEx({
     contentHtml: `<i class="fas fa-house-user"></i>`,
