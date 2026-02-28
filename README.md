@@ -75,7 +75,7 @@ For more details, refer to the [Leaflet 1 demo](index.html) or [Leaflet 2 demo](
 | backgroundFill | String | "#ffffff" | The CSS fill color for the background layer. |
 | backgroundOpacity | Number | 1 | The opacity (0 to 1) for the background layer. |
 | contentHtml | String | "" | The SVG/HTML for the top (content) layer. |
-| contentHtmlSize | Number[] | null | The [width, height] of the content layer in pixels. If null, uses background size. |
+| contentHtmlSize | Number[] | null | The [width, height] of the content layer in pixels. |
 | contentHtmlAnchor | Number[] | [16, 16] | The [x, y] center point for the content layer. |
 | contentColor | String | null | The CSS text/fill color for the content layer. |
 | contentFontSize | Number\|String | 16 | The font size for the content layer. Supports number (px) or string (e.g., "1.2rem"). |

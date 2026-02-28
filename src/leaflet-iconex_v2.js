@@ -19,6 +19,7 @@ import L from 'leaflet';
  * @class IconEx
  * @extends L.DivIcon
  * @classdesc A Leaflet plugin that extends L.DivIcon to create custom icons with SVG and HTML content.
+ * @param {IconExOptions} [options] - Configuration options for the icon.
  */
 class IconEx extends L.DivIcon {
     /**
@@ -43,7 +44,7 @@ class IconEx extends L.DivIcon {
      * @property {number} [backgroundOpacity=1] - The opacity (0 to 1) for the background layer.
      * 
      * @property {string} [contentHtml=""] - The SVG/HTML for the top (content) layer.
-     * @property {number[]} [contentHtmlSize=null] - The [width, height] of the content layer in pixels. If null, uses the background size.
+     * @property {number[]} [contentHtmlSize=null] - The [width, height] of the content layer in pixels.
      * @property {number[]} [contentHtmlAnchor=[16, 16]] - The [x, y] center point for the content layer.
      * @property {string} [contentColor=null] - The CSS text/fill color for the content layer.
      * @property {number|string} [contentFontSize=16] - The font size for the content layer. Supports number (px) or string (e.g., "1.2rem").
@@ -97,8 +98,8 @@ class IconEx extends L.DivIcon {
     /**
      * @function initialize
      * @memberof IconEx.prototype
-     * @description Processes and applies the provided options to the icon instance, calculating dimensions and generating final HTML.
-     * @param {IconExOptions} options - The merged configuration options.
+     * @description Processes the icon options, calculating dimensions and generating the final HTML.
+     * @param {IconExOptions} [options] - Configuration options for the icon.
      */
     initialize(options) {
         L.Util.setOptions(this, options);
@@ -147,7 +148,6 @@ class IconEx extends L.DivIcon {
             divs.push(`<div style="${backgroundStyles.join("; ")};">${this.options.backgroundHtml}</div>`);
         }
 
-
         if (this.options.contentHtml) {
             const contentStyles = [];
             contentStyles.push(`position: absolute`);
@@ -179,11 +179,13 @@ class IconEx extends L.DivIcon {
     }
 }
 
-// Register with Leaflet
-L.IconEx = IconEx;
-L.iconEx = function (options) {
+/**
+ * Creates a new IconEx instance.
+ * @param {IconExOptions} [options] - Configuration options for the icon.
+ * @returns {IconEx} A new IconEx instance.
+ */
+export const iconEx = function (options) {
     return new IconEx(options);
 };
 
 export default IconEx;
-
