@@ -1,7 +1,7 @@
 /*
- * Leaflet.IconEx v1.1.1 - 2025-03-23
+ * Leaflet.IconEx v1.1.2 - 2026-02-28
  *
- * Copyright 2024 mfhsieh
+ * Copyright 2026 mfhsieh
  * mfhsieh@gmail.com
  *
  * Licensed under the MIT license.
@@ -31,39 +31,49 @@
     "use strict";
 
     /**
+     * @typedef {Object} IconExOptions
+     * @description Configuration options for the IconEx plugin.
+     * 
+     * @property {number} [iconScale=1] - The scale factor for the entire icon.
+     * 
+     * @property {string} [iconHtml] - The SVG/HTML for the bottom (icon) layer.
+     * @property {number[]} [iconHtmlSize=[32, 40]] - The [width, height] of the icon layer in pixels.
+     * @property {number[]} [iconHtmlAnchor=[16, 40]] - The [x, y] anchor point for the icon layer (relative to top-left).
+     * @property {number[]} [iconHtmlPopupAnchor=[0, -24]] - The [x, y] popup anchor point (relative to the icon anchor).
+     * @property {string} [iconFill="#0d6efd"] - The CSS fill color for the icon layer.
+     * @property {number} [iconOpacity=1] - The opacity (0 to 1) for the icon layer.
+     * @property {string} [iconStroke="#ffffff"] - The CSS stroke color for the icon layer.
+     * @property {number} [iconStrokeOpacity=1] - The stroke opacity (0 to 1) for the icon layer.
+     * 
+     * @property {string} [backgroundHtml] - The SVG/HTML for the middle (background) layer.
+     * @property {number[]} [backgroundHtmlSize=[24, 24]] - The [width, height] of the background layer in pixels.
+     * @property {number[]} [backgroundHtmlAnchor=[16, 16]] - The [x, y] center point for the background layer.
+     * @property {string} [backgroundFill="#ffffff"] - The CSS fill color for the background layer.
+     * @property {number} [backgroundOpacity=1] - The opacity (0 to 1) for the background layer.
+     * 
+     * @property {string} [contentHtml=""] - The SVG/HTML for the top (content) layer.
+     * @property {number[]} [contentHtmlSize=null] - The [width, height] of the content layer in pixels. If null, uses the background size.
+     * @property {number[]} [contentHtmlAnchor=[16, 16]] - The [x, y] center point for the content layer.
+     * @property {string} [contentColor=null] - The CSS text/fill color for the content layer.
+     * @property {number|string} [contentFontSize=16] - The font size for the content layer. Supports number (px) or string (e.g., "1.2rem").
+     */
+
+    /**
      * @class IconEx
      * @extends L.DivIcon
      * @classdesc A Leaflet plugin that extends L.DivIcon to create custom icons with SVG and HTML content.
-     * @param {Object} options - Icon options.
+     * @param {IconExOptions} [options] - Configuration options for the icon.
      */
     const IconEx = L.DivIcon.extend({
         /**
-         * @property {Object} options - Default options for the icon.
-         * @property {number} options.iconScale - Scale factor for the icon.
-         * @property {string} options.iconHtml - SVG or HTML content for the main icon.
-         * @property {Array<number>} options.iconHtmlSize - Size of the main icon [width, height].
-         * @property {Array<number>} options.iconHtmlAnchor - Anchor point of the main icon [x, y].
-         * @property {Array<number>} options.iconHtmlPopupAnchor - Popup anchor point of the main icon [x, y].
-         * @property {string} options.iconFill - Fill color of the main icon.
-         * @property {number} options.iconOpacity - Opacity of the main icon.
-         * @property {string} options.iconStroke - Stroke color of the main icon.
-         * @property {number} options.iconStrokeOpacity - Stroke opacity of the main icon.
-         * @property {string} options.backgroundHtml - SVG or HTML content for the background.
-         * @property {Array<number>} options.backgroundHtmlSize - Size of the background [width, height].
-         * @property {Array<number>} options.backgroundHtmlAnchor - Anchor point of the background [x, y].
-         * @property {string} options.backgroundFill - Fill color of the background.
-         * @property {number} options.backgroundOpacity - Opacity of the background.
-         * @property {string} options.contentHtml - HTML content for the center of the icon.
-         * @property {Array<number>} options.contentHtmlSize - Size of the content [width, height].
-         * @property {Array<number>} options.contentHtmlAnchor - Anchor point of the content [x, y].
-         * @property {string} options.contentColor - Color of the content.
-         * @property {number} options.contentFontSize - Font size of the content.
+         * @type {IconExOptions}
+         * @description Default options for the icon.
          */
         options: {
             iconScale: 1,
 
             iconHtml: `
-<svg width="32" height="40" viewBox="0 0 32 40" xmlns="http://www.w3.org/2000/svg">
+<svg width="32" height="40" viewBox="0 0 32 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
 	<path stroke-width="1" d="M 16,0.5 C 7.4396,0.5 0.5,7.4396 0.5,16 C 0.5,19.9768 1.7958,23.3692 4.4470,26.3333 L 16,39.25 27.5530,26.3333 C 30.2042,23.3692 31.5,19.9768 31.5,16 31.5,7.4396 24.5604,0.5 16,0.5 Z" />
 </svg>`,
             iconHtmlSize: [32, 40],
@@ -75,7 +85,7 @@
             iconStrokeOpacity: 1,
 
             backgroundHtml: `
-<svg width="24" height="24" viewBox="-12 -12 24 24" xmlns="http://www.w3.org/2000/svg">
+<svg width="24" height="24" viewBox="-12 -12 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
 	<circle stroke-width="0" r="12" />
 </svg>`,
             backgroundHtmlSize: [24, 24],
@@ -93,13 +103,13 @@
         /**
          * @function initialize
          * @memberof IconEx.prototype
-         * @description Initializes the icon with the given options.
-         * @param {Object} options - Icon options.
+         * @description Processes and applies the provided options to the icon instance, calculating dimensions and generating final HTML.
+         * @param {IconExOptions} options - The merged configuration options.
          */
         initialize: function (options) {
             L.Util.setOptions(this, options);
 
-            const iconScale = this.options.iconScale ? this.options.iconScale : 1;
+            const iconScale = this.options.iconScale ?? 1;
             const divs = [];
 
             if (this.options.iconHtmlSize)
@@ -153,8 +163,11 @@
                     contentStyles.push(`left: ${this.options.contentHtmlAnchor[0] * iconScale}px; top: ${this.options.contentHtmlAnchor[1] * iconScale}px`);
                 if (this.options.contentColor)
                     contentStyles.push(`color: ${this.options.contentColor}`);
-                if (this.options.contentFontSize)
-                    contentStyles.push(`font-size: ${this.options.contentFontSize}px`);
+                if (this.options.contentFontSize) {
+                    const fontSize = this.options.contentFontSize;
+                    const fontSizeWithUnit = typeof fontSize === 'number' ? `${fontSize}px` : fontSize;
+                    contentStyles.push(`font-size: ${fontSizeWithUnit}`);
+                }
                 contentStyles.push(`transform: translate(-50%, -50%) scale(${iconScale})`);
                 contentStyles.push("display: flex");
                 contentStyles.push("align-items: center");
@@ -176,7 +189,7 @@
      * @function iconEx
      * @memberof L
      * @description Creates a new IconEx instance.
-     * @param {Object} options - Icon options.
+     * @param {IconExOptions} [options] - Configuration options for the icon.
      * @returns {IconEx} A new IconEx instance.
      */
     L.iconEx = function (options) {
