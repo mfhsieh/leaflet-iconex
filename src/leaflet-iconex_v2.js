@@ -1,5 +1,5 @@
 /*
- * Leaflet.IconEx 2.0.0-alpha.1 - 2026-02-28
+ * Leaflet.IconEx v2.0.0-alpha.1 - 2026-02-28
  *
  * Copyright 2026 mfhsieh
  * mfhsieh@gmail.com
